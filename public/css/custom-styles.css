@@ -1,0 +1,12 @@
+/*!
+ * Frontend pages custom styles
+ */
+
+/* Score Chart */
+img#score-chart {
+  width: 1200px;
+}
+
+tr.warning {
+  background-color: #ffb822 !important;
+}

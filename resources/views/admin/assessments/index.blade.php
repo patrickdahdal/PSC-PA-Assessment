@@ -1,0 +1,79 @@
+@inject('request', 'Illuminate\Http\Request')
+@extends('layouts.app')
+
+@section('content')
+    <h3 class="page-title">@lang('global.assessments.title')</h3>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            @if (count($assessments))
+                @lang('global.app.list_entries', ['count' => count($assessments)])
+            @else
+                @lang('global.app.list')
+            @endif
+           
+        </div>
+
+        <div class="panel-body table-responsive">
+            <table class="table table-bordered table-striped {{ count($assessments) ? 'datatable-2' : '' }} dt-select">
+                <thead>
+                    <tr>
+                        <th style="text-align:center"><input type="checkbox" id="select-all" /></th>
+                        <th>ID</th>
+                        <th>@lang('global.assessments.fields.respondent')</th>
+                        <th>@lang('global.customers.fields.company_name')</th>
+                        <th>@lang('global.respondents.fields.membercode')</th>
+                        <th>@lang('global.respondents.fields.gender')</th>
+                        <th>@lang('global.respondents.fields.adult')</th>
+                        <th>@lang('global.app.created_at')</th>
+                        <th>&nbsp;</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    @if (count($assessments))
+                        @foreach ($assessments as $assessment)
+                            <tr data-entry-id="{{ $assessment->id }}" {{ $assessment->is_incomplete ? 'class=danger' : '' }}>
+                                <td></td>
+                                <td style="text-align:center"><a href="{{ route('admin.assessments.score', [$assessment->id]) }}">{{ $assessment->id }}</a></td>
+                                <td>
+                                    <a href="{{ route('admin.respondents.show', [$assessment->respondent->id]) }}">
+                                        {{ $assessment->respondent->first_name }} {{ $assessment->respondent->last_name }}</a>
+                                </td>
+                                <td>
+                                    <a href="{{ route('admin.customers.show', [$assessment->respondent->membercode->customer_id]) }}">
+                                        {{ $assessment->respondent->membercode->customer->company_name }}</a>
+                                </td>
+                                <td>{{ $assessment->respondent->membercode->membercode }}</td>
+                                <td>{{ $assessment->respondent->gender }}</td>
+                                <td>{{ $assessment->respondent->adult }}</td>
+                                <td>{{ $assessment->created_at }}</td>
+                                <td>
+                                    <a href="{{ route('admin.assessments.score', [$assessment->id]) }}" class="btn btn-xs btn-success">@lang('global.assessments.score')</a>
+                                    <a href="{{ route('admin.assessments.answers', [$assessment->id]) }}" class="btn btn-xs btn-info">@lang('global.assessments.answers')</a>
+                                </td>
+                            </tr>
+                        @endforeach
+                    @else
+                        <tr>
+                            <td colspan="9">@lang('global.app.no_entries_in_table')</td>
+                        </tr>
+                    @endif
+                </tbody>
+            </table>
+        </div>
+        <div class="text-center">
+             {{$assessments->links() }}
+        </div>
+    </div>
+@stop
+@section('javascript')
+<script>
+$(document).ready(function() {
+    $('.datatable-2').DataTable( {
+        "paging":   false,
+        
+    } );
+} );
+</script>
+@stop

@@ -1,0 +1,376 @@
+[17-Dec-2020 21:07:52 Europe/Amsterdam] PHP Fatal error:  Interface 'JsonSerializable' not found in /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Support/Collection.php on line 40
+[17-Dec-2020 21:07:52 Europe/Amsterdam] PHP Fatal error:  Uncaught ReflectionException: Class view does not exist in /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php:788
+Stack trace:
+#0 /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(788): ReflectionClass->__construct('view')
+#1 /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(667): Illuminate\Container\Container->build('view')
+#2 /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(615): Illuminate\Container\Container->resolve('view', Array)
+#3 /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(767): Illuminate\Container\Container->make('view', Array)
+#4 /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(1227): Illuminate\Foundation\Application->make('view')
+#5 /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(176): Illum in /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 788
+[17-Dec-2020 21:21:06 Europe/Amsterdam] PHP Fatal error:  Interface 'JsonSerializable' not found in /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Support/Collection.php on line 40
+[17-Dec-2020 21:21:06 Europe/Amsterdam] PHP Fatal error:  Uncaught ReflectionException: Class view does not exist in /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php:788
+Stack trace:
+#0 /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(788): ReflectionClass->__construct('view')
+#1 /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(667): Illuminate\Container\Container->build('view')
+#2 /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(615): Illuminate\Container\Container->resolve('view', Array)
+#3 /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(767): Illuminate\Container\Container->make('view', Array)
+#4 /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(1227): Illuminate\Foundation\Application->make('view')
+#5 /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(176): Illum in /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 788
+[17-Dec-2020 21:23:21 Europe/Amsterdam] PHP Fatal error:  Interface 'JsonSerializable' not found in /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Support/Collection.php on line 40
+[17-Dec-2020 21:23:21 Europe/Amsterdam] PHP Fatal error:  Uncaught ReflectionException: Class view does not exist in /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php:788
+Stack trace:
+#0 /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(788): ReflectionClass->__construct('view')
+#1 /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(667): Illuminate\Container\Container->build('view')
+#2 /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(615): Illuminate\Container\Container->resolve('view', Array)
+#3 /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(767): Illuminate\Container\Container->make('view', Array)
+#4 /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(1227): Illuminate\Foundation\Application->make('view')
+#5 /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(176): Illum in /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 788
+[17-Dec-2020 21:30:17 Europe/Amsterdam] PHP Fatal error:  Interface 'JsonSerializable' not found in /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Support/Collection.php on line 40
+[17-Dec-2020 21:30:17 Europe/Amsterdam] PHP Fatal error:  Uncaught ReflectionException: Class view does not exist in /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php:788
+Stack trace:
+#0 /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(788): ReflectionClass->__construct('view')
+#1 /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(667): Illuminate\Container\Container->build('view')
+#2 /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(615): Illuminate\Container\Container->resolve('view', Array)
+#3 /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(767): Illuminate\Container\Container->make('view', Array)
+#4 /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(1227): Illuminate\Foundation\Application->make('view')
+#5 /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(176): Illum in /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 788
+[17-Dec-2020 21:30:20 Europe/Amsterdam] PHP Fatal error:  Interface 'JsonSerializable' not found in /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Support/Collection.php on line 40
+[17-Dec-2020 21:30:20 Europe/Amsterdam] PHP Fatal error:  Uncaught ReflectionException: Class view does not exist in /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php:788
+Stack trace:
+#0 /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(788): ReflectionClass->__construct('view')
+#1 /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(667): Illuminate\Container\Container->build('view')
+#2 /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(615): Illuminate\Container\Container->resolve('view', Array)
+#3 /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(767): Illuminate\Container\Container->make('view', Array)
+#4 /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(1227): Illuminate\Foundation\Application->make('view')
+#5 /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(176): Illum in /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 788
+[17-Dec-2020 21:30:22 Europe/Amsterdam] PHP Fatal error:  Interface 'JsonSerializable' not found in /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Support/Collection.php on line 40
+[17-Dec-2020 21:30:22 Europe/Amsterdam] PHP Fatal error:  Uncaught ReflectionException: Class view does not exist in /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php:788
+Stack trace:
+#0 /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(788): ReflectionClass->__construct('view')
+#1 /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(667): Illuminate\Container\Container->build('view')
+#2 /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(615): Illuminate\Container\Container->resolve('view', Array)
+#3 /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(767): Illuminate\Container\Container->make('view', Array)
+#4 /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(1227): Illuminate\Foundation\Application->make('view')
+#5 /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(176): Illum in /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 788
+[17-Dec-2020 21:42:00 Europe/Amsterdam] PHP Fatal error:  Interface 'JsonSerializable' not found in /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Support/Collection.php on line 40
+[17-Dec-2020 21:42:00 Europe/Amsterdam] PHP Fatal error:  Uncaught ReflectionException: Class view does not exist in /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php:788
+Stack trace:
+#0 /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(788): ReflectionClass->__construct('view')
+#1 /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(667): Illuminate\Container\Container->build('view')
+#2 /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(615): Illuminate\Container\Container->resolve('view', Array)
+#3 /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(767): Illuminate\Container\Container->make('view', Array)
+#4 /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(1227): Illuminate\Foundation\Application->make('view')
+#5 /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(176): Illum in /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 788
+[17-Dec-2020 21:42:05 Europe/Amsterdam] PHP Fatal error:  Interface 'JsonSerializable' not found in /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Support/Collection.php on line 40
+[17-Dec-2020 21:42:05 Europe/Amsterdam] PHP Fatal error:  Uncaught ReflectionException: Class view does not exist in /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php:788
+Stack trace:
+#0 /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(788): ReflectionClass->__construct('view')
+#1 /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(667): Illuminate\Container\Container->build('view')
+#2 /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(615): Illuminate\Container\Container->resolve('view', Array)
+#3 /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(767): Illuminate\Container\Container->make('view', Array)
+#4 /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(1227): Illuminate\Foundation\Application->make('view')
+#5 /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(176): Illum in /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 788
+[17-Dec-2020 21:42:10 Europe/Amsterdam] PHP Fatal error:  Interface 'JsonSerializable' not found in /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Support/Collection.php on line 40
+[17-Dec-2020 21:42:10 Europe/Amsterdam] PHP Fatal error:  Uncaught ReflectionException: Class view does not exist in /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php:788
+Stack trace:
+#0 /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(788): ReflectionClass->__construct('view')
+#1 /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(667): Illuminate\Container\Container->build('view')
+#2 /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(615): Illuminate\Container\Container->resolve('view', Array)
+#3 /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(767): Illuminate\Container\Container->make('view', Array)
+#4 /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(1227): Illuminate\Foundation\Application->make('view')
+#5 /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(176): Illum in /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 788
+[17-Dec-2020 21:42:16 Europe/Amsterdam] PHP Fatal error:  Interface 'JsonSerializable' not found in /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Support/Collection.php on line 40
+[17-Dec-2020 21:42:16 Europe/Amsterdam] PHP Fatal error:  Uncaught ReflectionException: Class view does not exist in /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php:788
+Stack trace:
+#0 /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(788): ReflectionClass->__construct('view')
+#1 /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(667): Illuminate\Container\Container->build('view')
+#2 /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(615): Illuminate\Container\Container->resolve('view', Array)
+#3 /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(767): Illuminate\Container\Container->make('view', Array)
+#4 /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(1227): Illuminate\Foundation\Application->make('view')
+#5 /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(176): Illum in /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 788
+[17-Dec-2020 21:42:21 Europe/Amsterdam] PHP Fatal error:  Interface 'JsonSerializable' not found in /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Support/Collection.php on line 40
+[17-Dec-2020 21:42:21 Europe/Amsterdam] PHP Fatal error:  Uncaught ReflectionException: Class view does not exist in /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php:788
+Stack trace:
+#0 /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(788): ReflectionClass->__construct('view')
+#1 /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(667): Illuminate\Container\Container->build('view')
+#2 /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(615): Illuminate\Container\Container->resolve('view', Array)
+#3 /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(767): Illuminate\Container\Container->make('view', Array)
+#4 /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(1227): Illuminate\Foundation\Application->make('view')
+#5 /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(176): Illum in /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 788
+[17-Dec-2020 21:42:24 Europe/Amsterdam] PHP Fatal error:  Interface 'JsonSerializable' not found in /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Support/Collection.php on line 40
+[17-Dec-2020 21:42:24 Europe/Amsterdam] PHP Fatal error:  Uncaught ReflectionException: Class view does not exist in /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php:788
+Stack trace:
+#0 /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(788): ReflectionClass->__construct('view')
+#1 /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(667): Illuminate\Container\Container->build('view')
+#2 /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(615): Illuminate\Container\Container->resolve('view', Array)
+#3 /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(767): Illuminate\Container\Container->make('view', Array)
+#4 /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(1227): Illuminate\Foundation\Application->make('view')
+#5 /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(176): Illum in /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 788
+[17-Dec-2020 21:42:31 Europe/Amsterdam] PHP Fatal error:  Interface 'JsonSerializable' not found in /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Support/Collection.php on line 40
+[17-Dec-2020 21:42:31 Europe/Amsterdam] PHP Fatal error:  Uncaught ReflectionException: Class view does not exist in /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php:788
+Stack trace:
+#0 /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(788): ReflectionClass->__construct('view')
+#1 /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(667): Illuminate\Container\Container->build('view')
+#2 /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(615): Illuminate\Container\Container->resolve('view', Array)
+#3 /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(767): Illuminate\Container\Container->make('view', Array)
+#4 /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(1227): Illuminate\Foundation\Application->make('view')
+#5 /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(176): Illum in /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 788
+[17-Dec-2020 21:45:11 Europe/Amsterdam] PHP Fatal error:  Declaration of Symfony\Component\Translation\TranslatorInterface::setLocale($locale) must be compatible with Symfony\Contracts\Translation\LocaleAwareInterface::setLocale(string $locale) in /home2/s75fi9i5/public_html/vendor/symfony/translation/TranslatorInterface.php on line 24
+[17-Dec-2020 21:45:53 Europe/Amsterdam] PHP Fatal error:  Declaration of Symfony\Component\Translation\TranslatorInterface::setLocale($locale) must be compatible with Symfony\Contracts\Translation\LocaleAwareInterface::setLocale(string $locale) in /home2/s75fi9i5/public_html/vendor/symfony/translation/TranslatorInterface.php on line 24
+[17-Dec-2020 21:48:42 Europe/Amsterdam] PHP Fatal error:  Declaration of Symfony\Component\Translation\TranslatorInterface::setLocale($locale) must be compatible with Symfony\Contracts\Translation\LocaleAwareInterface::setLocale(string $locale) in /home2/s75fi9i5/public_html/vendor/symfony/translation/TranslatorInterface.php on line 24
+[17-Dec-2020 21:49:26 Europe/Amsterdam] PHP Fatal error:  Declaration of Symfony\Component\Translation\TranslatorInterface::setLocale($locale) must be compatible with Symfony\Contracts\Translation\LocaleAwareInterface::setLocale(string $locale) in /home2/s75fi9i5/public_html/vendor/symfony/translation/TranslatorInterface.php on line 24
+[17-Dec-2020 21:50:08 Europe/Amsterdam] PHP Fatal error:  Declaration of Symfony\Component\Translation\TranslatorInterface::setLocale($locale) must be compatible with Symfony\Contracts\Translation\LocaleAwareInterface::setLocale(string $locale) in /home2/s75fi9i5/public_html/vendor/symfony/translation/TranslatorInterface.php on line 24
+[17-Dec-2020 21:51:54 Europe/Amsterdam] PHP Fatal error:  Declaration of Symfony\Component\Translation\TranslatorInterface::setLocale($locale) must be compatible with Symfony\Contracts\Translation\LocaleAwareInterface::setLocale(string $locale) in /home2/s75fi9i5/public_html/vendor/symfony/translation/TranslatorInterface.php on line 24
+[17-Dec-2020 21:54:01 Europe/Amsterdam] PHP Fatal error:  Interface 'JsonSerializable' not found in /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Support/Collection.php on line 40
+[17-Dec-2020 21:54:01 Europe/Amsterdam] PHP Fatal error:  Uncaught Error: Call to undefined function Symfony\Component\VarDumper\Dumper\json_encode() in /home2/s75fi9i5/public_html/vendor/symfony/var-dumper/Dumper/HtmlDumper.php:162
+Stack trace:
+#0 /home2/s75fi9i5/public_html/vendor/symfony/var-dumper/Dumper/HtmlDumper.php(968): Symfony\Component\VarDumper\Dumper\HtmlDumper->getDumpHeader()
+#1 /home2/s75fi9i5/public_html/vendor/symfony/var-dumper/Dumper/CliDumper.php(572): Symfony\Component\VarDumper\Dumper\HtmlDumper->dumpLine(0, true)
+#2 /home2/s75fi9i5/public_html/vendor/symfony/var-dumper/Dumper/CliDumper.php(263): Symfony\Component\VarDumper\Dumper\CliDumper->endValue(Object(Symfony\Component\VarDumper\Cloner\Cursor))
+#3 /home2/s75fi9i5/public_html/vendor/symfony/var-dumper/Dumper/HtmlDumper.php(815): Symfony\Component\VarDumper\Dumper\CliDumper->dumpString(Object(Symfony\Component\VarDumper\Cloner\Cursor), 'PHP's json exte...', false, 0)
+#4 /home2/s75fi9i5/public_html/vendor/symfony/var-dumper/Cloner/Data.php(405): Symfony\Component\VarDumper\Dumper\HtmlDumper in /home2/s75fi9i5/public_html/vendor/symfony/var-dumper/Dumper/HtmlDumper.php on line 162
+[17-Dec-2020 21:56:15 Europe/Amsterdam] PHP Fatal error:  Interface 'JsonSerializable' not found in /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Support/Collection.php on line 40
+[17-Dec-2020 21:56:15 Europe/Amsterdam] PHP Fatal error:  Uncaught Error: Call to undefined function Symfony\Component\VarDumper\Dumper\json_encode() in /home2/s75fi9i5/public_html/vendor/symfony/var-dumper/Dumper/HtmlDumper.php:162
+Stack trace:
+#0 /home2/s75fi9i5/public_html/vendor/symfony/var-dumper/Dumper/HtmlDumper.php(968): Symfony\Component\VarDumper\Dumper\HtmlDumper->getDumpHeader()
+#1 /home2/s75fi9i5/public_html/vendor/symfony/var-dumper/Dumper/CliDumper.php(572): Symfony\Component\VarDumper\Dumper\HtmlDumper->dumpLine(0, true)
+#2 /home2/s75fi9i5/public_html/vendor/symfony/var-dumper/Dumper/CliDumper.php(263): Symfony\Component\VarDumper\Dumper\CliDumper->endValue(Object(Symfony\Component\VarDumper\Cloner\Cursor))
+#3 /home2/s75fi9i5/public_html/vendor/symfony/var-dumper/Dumper/HtmlDumper.php(815): Symfony\Component\VarDumper\Dumper\CliDumper->dumpString(Object(Symfony\Component\VarDumper\Cloner\Cursor), 'PHP's json exte...', false, 0)
+#4 /home2/s75fi9i5/public_html/vendor/symfony/var-dumper/Cloner/Data.php(405): Symfony\Component\VarDumper\Dumper\HtmlDumper in /home2/s75fi9i5/public_html/vendor/symfony/var-dumper/Dumper/HtmlDumper.php on line 162
+[17-Dec-2020 22:03:30 Europe/Amsterdam] PHP Fatal error:  Interface 'JsonSerializable' not found in /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Support/Collection.php on line 40
+[17-Dec-2020 22:03:30 Europe/Amsterdam] PHP Fatal error:  Uncaught ReflectionException: Class view does not exist in /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php:788
+Stack trace:
+#0 /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(788): ReflectionClass->__construct('view')
+#1 /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(667): Illuminate\Container\Container->build('view')
+#2 /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(615): Illuminate\Container\Container->resolve('view', Array)
+#3 /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(767): Illuminate\Container\Container->make('view', Array)
+#4 /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(1227): Illuminate\Foundation\Application->make('view')
+#5 /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(176): Illum in /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 788
+[17-Dec-2020 22:04:32 Europe/Amsterdam] PHP Fatal error:  Interface 'JsonSerializable' not found in /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Support/Collection.php on line 40
+[17-Dec-2020 22:04:32 Europe/Amsterdam] PHP Fatal error:  Uncaught ReflectionException: Class view does not exist in /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php:788
+Stack trace:
+#0 /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(788): ReflectionClass->__construct('view')
+#1 /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(667): Illuminate\Container\Container->build('view')
+#2 /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(615): Illuminate\Container\Container->resolve('view', Array)
+#3 /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(767): Illuminate\Container\Container->make('view', Array)
+#4 /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(1227): Illuminate\Foundation\Application->make('view')
+#5 /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(176): Illum in /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 788
+[17-Dec-2020 22:04:34 Europe/Amsterdam] PHP Fatal error:  Interface 'JsonSerializable' not found in /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Support/Collection.php on line 40
+[17-Dec-2020 22:04:34 Europe/Amsterdam] PHP Fatal error:  Uncaught ReflectionException: Class view does not exist in /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php:788
+Stack trace:
+#0 /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(788): ReflectionClass->__construct('view')
+#1 /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(667): Illuminate\Container\Container->build('view')
+#2 /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(615): Illuminate\Container\Container->resolve('view', Array)
+#3 /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(767): Illuminate\Container\Container->make('view', Array)
+#4 /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(1227): Illuminate\Foundation\Application->make('view')
+#5 /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(176): Illum in /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 788
+[17-Dec-2020 22:08:45 Europe/Amsterdam] PHP Fatal error:  Interface 'JsonSerializable' not found in /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Support/Collection.php on line 40
+[17-Dec-2020 22:08:45 Europe/Amsterdam] PHP Fatal error:  Uncaught ReflectionException: Class view does not exist in /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php:788
+Stack trace:
+#0 /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(788): ReflectionClass->__construct('view')
+#1 /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(667): Illuminate\Container\Container->build('view')
+#2 /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(615): Illuminate\Container\Container->resolve('view', Array)
+#3 /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(767): Illuminate\Container\Container->make('view', Array)
+#4 /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(1227): Illuminate\Foundation\Application->make('view')
+#5 /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(176): Illum in /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 788
+[17-Dec-2020 22:08:46 Europe/Amsterdam] PHP Fatal error:  Interface 'JsonSerializable' not found in /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Support/Collection.php on line 40
+[17-Dec-2020 22:08:46 Europe/Amsterdam] PHP Fatal error:  Uncaught ReflectionException: Class view does not exist in /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php:788
+Stack trace:
+#0 /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(788): ReflectionClass->__construct('view')
+#1 /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(667): Illuminate\Container\Container->build('view')
+#2 /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(615): Illuminate\Container\Container->resolve('view', Array)
+#3 /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(767): Illuminate\Container\Container->make('view', Array)
+#4 /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(1227): Illuminate\Foundation\Application->make('view')
+#5 /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(176): Illum in /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 788
+[17-Dec-2020 22:08:50 Europe/Amsterdam] PHP Fatal error:  Interface 'JsonSerializable' not found in /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Support/Collection.php on line 40
+[17-Dec-2020 22:08:50 Europe/Amsterdam] PHP Fatal error:  Uncaught ReflectionException: Class view does not exist in /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php:788
+Stack trace:
+#0 /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(788): ReflectionClass->__construct('view')
+#1 /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(667): Illuminate\Container\Container->build('view')
+#2 /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(615): Illuminate\Container\Container->resolve('view', Array)
+#3 /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(767): Illuminate\Container\Container->make('view', Array)
+#4 /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(1227): Illuminate\Foundation\Application->make('view')
+#5 /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(176): Illum in /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 788
+[17-Dec-2020 22:10:19 Europe/Amsterdam] PHP Fatal error:  Interface 'JsonSerializable' not found in /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Support/Collection.php on line 40
+[17-Dec-2020 22:10:19 Europe/Amsterdam] PHP Fatal error:  Uncaught ReflectionException: Class view does not exist in /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php:788
+Stack trace:
+#0 /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(788): ReflectionClass->__construct('view')
+#1 /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(667): Illuminate\Container\Container->build('view')
+#2 /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(615): Illuminate\Container\Container->resolve('view', Array)
+#3 /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(767): Illuminate\Container\Container->make('view', Array)
+#4 /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(1227): Illuminate\Foundation\Application->make('view')
+#5 /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(176): Illum in /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 788
+[17-Dec-2020 22:10:39 Europe/Amsterdam] PHP Fatal error:  Interface 'JsonSerializable' not found in /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Support/Collection.php on line 40
+[17-Dec-2020 22:10:39 Europe/Amsterdam] PHP Fatal error:  Uncaught ReflectionException: Class view does not exist in /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php:788
+Stack trace:
+#0 /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(788): ReflectionClass->__construct('view')
+#1 /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(667): Illuminate\Container\Container->build('view')
+#2 /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(615): Illuminate\Container\Container->resolve('view', Array)
+#3 /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(767): Illuminate\Container\Container->make('view', Array)
+#4 /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(1227): Illuminate\Foundation\Application->make('view')
+#5 /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(176): Illum in /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 788
+[11-Mar-2021 07:27:56 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 20480 bytes) in /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php on line 392
+[11-Mar-2021 07:27:56 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 32768 bytes) in /home2/s75fi9i5/public_html/vendor/symfony/debug/Exception/FatalErrorException.php on line 1
+[11-Mar-2021 07:27:56 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 3239936 bytes) in Unknown on line 0
+[11-Mar-2021 12:39:47 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 20480 bytes) in /home2/s75fi9i5/public_html/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOStatement.php on line 258
+[11-Mar-2021 12:39:47 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 32768 bytes) in /home2/s75fi9i5/public_html/vendor/symfony/debug/Exception/FatalErrorException.php on line 1
+[11-Mar-2021 12:39:47 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 3235840 bytes) in Unknown on line 0
+[11-Mar-2021 12:42:41 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 20480 bytes) in /home2/s75fi9i5/public_html/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOStatement.php on line 258
+[11-Mar-2021 12:42:41 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 32768 bytes) in /home2/s75fi9i5/public_html/vendor/symfony/debug/Exception/FatalErrorException.php on line 1
+[11-Mar-2021 12:42:41 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 3235840 bytes) in Unknown on line 0
+[12-Mar-2021 10:03:32 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 20480 bytes) in /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php on line 392
+[12-Mar-2021 10:03:32 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 32768 bytes) in /home2/s75fi9i5/public_html/vendor/symfony/debug/Exception/FatalErrorException.php on line 1
+[12-Mar-2021 10:03:32 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 3235840 bytes) in Unknown on line 0
+[12-Mar-2021 16:44:21 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 20480 bytes) in /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php on line 392
+[12-Mar-2021 16:44:21 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 32768 bytes) in /home2/s75fi9i5/public_html/vendor/symfony/debug/Exception/FatalErrorException.php on line 1
+[12-Mar-2021 16:44:21 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 3235840 bytes) in Unknown on line 0
+[12-Mar-2021 16:46:48 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 20480 bytes) in /home2/s75fi9i5/public_html/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOStatement.php on line 258
+[12-Mar-2021 16:46:48 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 32768 bytes) in /home2/s75fi9i5/public_html/vendor/symfony/debug/Exception/FatalErrorException.php on line 1
+[12-Mar-2021 16:46:48 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 3235840 bytes) in Unknown on line 0
+[12-Mar-2021 16:47:24 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 20480 bytes) in /home2/s75fi9i5/public_html/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOStatement.php on line 258
+[12-Mar-2021 16:47:24 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 32768 bytes) in /home2/s75fi9i5/public_html/vendor/symfony/debug/Exception/FatalErrorException.php on line 1
+[12-Mar-2021 16:47:24 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 3235840 bytes) in Unknown on line 0
+[12-Mar-2021 16:58:37 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 20480 bytes) in /home2/s75fi9i5/public_html/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOStatement.php on line 258
+[12-Mar-2021 16:58:37 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 32768 bytes) in /home2/s75fi9i5/public_html/vendor/symfony/debug/Exception/FatalErrorException.php on line 1
+[12-Mar-2021 16:58:38 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 3235840 bytes) in Unknown on line 0
+[12-Mar-2021 17:00:50 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 20480 bytes) in /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php on line 392
+[12-Mar-2021 17:00:50 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 32768 bytes) in /home2/s75fi9i5/public_html/vendor/symfony/debug/Exception/FatalErrorException.php on line 1
+[12-Mar-2021 17:00:50 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 3235840 bytes) in Unknown on line 0
+[13-Mar-2021 11:11:14 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 20480 bytes) in /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Support/Collection.php on line 1118
+[13-Mar-2021 11:11:14 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 32768 bytes) in /home2/s75fi9i5/public_html/vendor/symfony/debug/Exception/FatalErrorException.php on line 1
+[13-Mar-2021 11:11:14 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 3235840 bytes) in Unknown on line 0
+[13-Mar-2021 11:11:56 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 20480 bytes) in /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Support/Collection.php on line 1118
+[13-Mar-2021 11:11:56 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 32768 bytes) in /home2/s75fi9i5/public_html/vendor/symfony/debug/Exception/FatalErrorException.php on line 1
+[13-Mar-2021 11:11:56 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 3235840 bytes) in Unknown on line 0
+[13-Mar-2021 11:24:10 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 20480 bytes) in /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Database/Grammar.php on line 99
+[13-Mar-2021 11:24:10 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 32768 bytes) in /home2/s75fi9i5/public_html/vendor/symfony/debug/Exception/FatalErrorException.php on line 1
+[13-Mar-2021 11:24:10 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 3235840 bytes) in Unknown on line 0
+[15-Mar-2021 03:26:28 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 20480 bytes) in /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php on line 392
+[15-Mar-2021 03:26:28 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 32768 bytes) in /home2/s75fi9i5/public_html/vendor/symfony/debug/Exception/FatalErrorException.php on line 1
+[15-Mar-2021 03:26:28 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 3235840 bytes) in Unknown on line 0
+[15-Mar-2021 03:26:54 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 20480 bytes) in /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php on line 392
+[15-Mar-2021 03:26:54 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 32768 bytes) in /home2/s75fi9i5/public_html/vendor/symfony/debug/Exception/FatalErrorException.php on line 1
+[15-Mar-2021 03:26:54 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 3235840 bytes) in Unknown on line 0
+[15-Mar-2021 10:10:01 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 20480 bytes) in /home2/s75fi9i5/public_html/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOStatement.php on line 258
+[15-Mar-2021 10:10:01 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 32768 bytes) in /home2/s75fi9i5/public_html/vendor/symfony/debug/Exception/FatalErrorException.php on line 1
+[15-Mar-2021 10:10:01 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 3235840 bytes) in Unknown on line 0
+[15-Mar-2021 10:10:10 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 20480 bytes) in /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php on line 392
+[15-Mar-2021 10:10:10 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 32768 bytes) in /home2/s75fi9i5/public_html/vendor/symfony/debug/Exception/FatalErrorException.php on line 1
+[15-Mar-2021 10:10:10 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 3235840 bytes) in Unknown on line 0
+[15-Mar-2021 10:10:42 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 20480 bytes) in /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php on line 392
+[15-Mar-2021 10:10:42 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 32768 bytes) in /home2/s75fi9i5/public_html/vendor/symfony/debug/Exception/FatalErrorException.php on line 1
+[15-Mar-2021 10:10:42 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 3235840 bytes) in Unknown on line 0
+[15-Mar-2021 12:22:13 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 20480 bytes) in /home2/s75fi9i5/public_html/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOStatement.php on line 258
+[15-Mar-2021 12:22:13 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 32768 bytes) in /home2/s75fi9i5/public_html/vendor/symfony/debug/Exception/FatalErrorException.php on line 1
+[15-Mar-2021 12:22:13 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 3235840 bytes) in Unknown on line 0
+[15-Mar-2021 12:24:24 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 20480 bytes) in /home2/s75fi9i5/public_html/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOStatement.php on line 115
+[15-Mar-2021 12:24:24 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 32768 bytes) in /home2/s75fi9i5/public_html/vendor/symfony/debug/Exception/FatalErrorException.php on line 1
+[15-Mar-2021 12:24:24 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 3235840 bytes) in Unknown on line 0
+[15-Mar-2021 12:29:15 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 20480 bytes) in /home2/s75fi9i5/public_html/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOStatement.php on line 115
+[15-Mar-2021 12:29:15 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 32768 bytes) in /home2/s75fi9i5/public_html/vendor/symfony/debug/Exception/FatalErrorException.php on line 1
+[15-Mar-2021 12:29:15 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 3235840 bytes) in Unknown on line 0
+[15-Mar-2021 12:32:48 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 20480 bytes) in /home2/s75fi9i5/public_html/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOStatement.php on line 258
+[15-Mar-2021 12:32:48 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 32768 bytes) in /home2/s75fi9i5/public_html/vendor/symfony/debug/Exception/FatalErrorException.php on line 1
+[15-Mar-2021 12:32:48 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 3235840 bytes) in Unknown on line 0
+[15-Mar-2021 12:38:16 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 20480 bytes) in /home2/s75fi9i5/public_html/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOStatement.php on line 258
+[15-Mar-2021 12:38:16 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 32768 bytes) in /home2/s75fi9i5/public_html/vendor/symfony/debug/Exception/FatalErrorException.php on line 1
+[15-Mar-2021 12:38:16 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 3235840 bytes) in Unknown on line 0
+[15-Mar-2021 12:39:14 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 20480 bytes) in /home2/s75fi9i5/public_html/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOStatement.php on line 258
+[15-Mar-2021 12:39:14 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 32768 bytes) in /home2/s75fi9i5/public_html/vendor/symfony/debug/Exception/FatalErrorException.php on line 1
+[15-Mar-2021 12:39:14 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 3235840 bytes) in Unknown on line 0
+[15-Mar-2021 12:41:19 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 20480 bytes) in /home2/s75fi9i5/public_html/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOStatement.php on line 258
+[15-Mar-2021 12:41:19 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 32768 bytes) in /home2/s75fi9i5/public_html/vendor/symfony/debug/Exception/FatalErrorException.php on line 1
+[15-Mar-2021 12:41:19 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 3235840 bytes) in Unknown on line 0
+[15-Mar-2021 17:54:52 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 20480 bytes) in /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php on line 392
+[15-Mar-2021 17:54:52 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 32768 bytes) in /home2/s75fi9i5/public_html/vendor/symfony/debug/Exception/FatalErrorException.php on line 1
+[15-Mar-2021 17:54:52 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 3235840 bytes) in Unknown on line 0
+[16-Mar-2021 06:40:03 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 20480 bytes) in /home2/s75fi9i5/public_html/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOStatement.php on line 258
+[16-Mar-2021 06:40:03 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 32768 bytes) in /home2/s75fi9i5/public_html/vendor/symfony/debug/Exception/FatalErrorException.php on line 1
+[16-Mar-2021 06:40:03 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 3235840 bytes) in Unknown on line 0
+[16-Mar-2021 18:55:20 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 20480 bytes) in /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php on line 392
+[16-Mar-2021 18:55:20 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 32768 bytes) in /home2/s75fi9i5/public_html/vendor/symfony/debug/Exception/FatalErrorException.php on line 1
+[16-Mar-2021 18:55:20 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 3235840 bytes) in Unknown on line 0
+[17-Mar-2021 18:37:56 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 20480 bytes) in /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php on line 392
+[17-Mar-2021 18:37:56 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 32768 bytes) in /home2/s75fi9i5/public_html/vendor/symfony/debug/Exception/FatalErrorException.php on line 1
+[17-Mar-2021 18:37:56 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 3235840 bytes) in Unknown on line 0
+[17-Mar-2021 18:37:56 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 20480 bytes) in /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php on line 392
+[17-Mar-2021 18:37:56 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 32768 bytes) in /home2/s75fi9i5/public_html/vendor/symfony/debug/Exception/FatalErrorException.php on line 1
+[17-Mar-2021 18:37:56 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 3235840 bytes) in Unknown on line 0
+[19-Mar-2021 11:18:57 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 20480 bytes) in /home2/s75fi9i5/public_html/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOStatement.php on line 258
+[19-Mar-2021 11:18:58 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 32768 bytes) in /home2/s75fi9i5/public_html/vendor/symfony/debug/Exception/FatalErrorException.php on line 1
+[19-Mar-2021 11:18:58 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 3235840 bytes) in Unknown on line 0
+[19-Mar-2021 11:49:42 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 20480 bytes) in /home2/s75fi9i5/public_html/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOStatement.php on line 258
+[19-Mar-2021 11:49:42 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 32768 bytes) in /home2/s75fi9i5/public_html/vendor/symfony/debug/Exception/FatalErrorException.php on line 1
+[19-Mar-2021 11:49:42 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 3235840 bytes) in Unknown on line 0
+[19-Mar-2021 15:57:57 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 20480 bytes) in /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php on line 392
+[19-Mar-2021 15:57:57 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 32768 bytes) in /home2/s75fi9i5/public_html/vendor/symfony/debug/Exception/FatalErrorException.php on line 1
+[19-Mar-2021 15:57:57 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 3231744 bytes) in Unknown on line 0
+[19-Mar-2021 16:06:26 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 20480 bytes) in /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php on line 392
+[19-Mar-2021 16:06:26 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 32768 bytes) in /home2/s75fi9i5/public_html/vendor/symfony/debug/Exception/FatalErrorException.php on line 1
+[19-Mar-2021 16:06:26 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 3231744 bytes) in Unknown on line 0
+[19-Mar-2021 16:06:33 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 20480 bytes) in /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php on line 392
+[19-Mar-2021 16:06:33 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 32768 bytes) in /home2/s75fi9i5/public_html/vendor/symfony/debug/Exception/FatalErrorException.php on line 1
+[19-Mar-2021 16:06:33 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 3231744 bytes) in Unknown on line 0
+[19-Mar-2021 20:51:00 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 20480 bytes) in /home2/s75fi9i5/public_html/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOStatement.php on line 258
+[19-Mar-2021 20:51:00 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 32768 bytes) in /home2/s75fi9i5/public_html/vendor/symfony/debug/Exception/FatalErrorException.php on line 1
+[19-Mar-2021 20:51:00 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 3235840 bytes) in Unknown on line 0
+[19-Mar-2021 21:16:18 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 20480 bytes) in /home2/s75fi9i5/public_html/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOStatement.php on line 258
+[19-Mar-2021 21:16:18 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 32768 bytes) in /home2/s75fi9i5/public_html/vendor/symfony/debug/Exception/FatalErrorException.php on line 1
+[19-Mar-2021 21:16:18 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 3235840 bytes) in Unknown on line 0
+[19-Mar-2021 21:55:48 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 20480 bytes) in /home2/s75fi9i5/public_html/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOStatement.php on line 258
+[19-Mar-2021 21:55:48 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 32768 bytes) in /home2/s75fi9i5/public_html/vendor/symfony/debug/Exception/FatalErrorException.php on line 1
+[19-Mar-2021 21:55:48 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 3235840 bytes) in Unknown on line 0
+[20-Mar-2021 01:12:16 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 20480 bytes) in /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Support/Collection.php on line 1118
+[20-Mar-2021 01:12:16 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 32768 bytes) in /home2/s75fi9i5/public_html/vendor/symfony/debug/Exception/FatalErrorException.php on line 1
+[20-Mar-2021 01:12:16 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 3231744 bytes) in Unknown on line 0
+[20-Mar-2021 01:14:34 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 20480 bytes) in /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php on line 392
+[20-Mar-2021 01:14:34 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 32768 bytes) in /home2/s75fi9i5/public_html/vendor/symfony/debug/Exception/FatalErrorException.php on line 1
+[20-Mar-2021 01:14:34 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 3235840 bytes) in Unknown on line 0
+[20-Mar-2021 01:36:28 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 20480 bytes) in /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php on line 392
+[20-Mar-2021 01:36:28 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 32768 bytes) in /home2/s75fi9i5/public_html/vendor/symfony/debug/Exception/FatalErrorException.php on line 1
+[20-Mar-2021 01:36:28 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 3235840 bytes) in Unknown on line 0
+[21-Mar-2021 12:52:20 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 20480 bytes) in /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php on line 392
+[21-Mar-2021 12:52:20 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 32768 bytes) in /home2/s75fi9i5/public_html/vendor/symfony/debug/Exception/FatalErrorException.php on line 1
+[21-Mar-2021 12:52:20 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 3231744 bytes) in Unknown on line 0
+[21-Mar-2021 12:52:30 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 20480 bytes) in /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php on line 392
+[21-Mar-2021 12:52:30 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 32768 bytes) in /home2/s75fi9i5/public_html/vendor/symfony/debug/Exception/FatalErrorException.php on line 1
+[21-Mar-2021 12:52:30 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 3231744 bytes) in Unknown on line 0
+[21-Mar-2021 13:30:33 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 20480 bytes) in /home2/s75fi9i5/public_html/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOStatement.php on line 258
+[21-Mar-2021 13:30:33 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 32768 bytes) in /home2/s75fi9i5/public_html/vendor/symfony/debug/Exception/FatalErrorException.php on line 1
+[21-Mar-2021 13:30:33 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 3235840 bytes) in Unknown on line 0
+[21-Mar-2021 13:47:17 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 20480 bytes) in /home2/s75fi9i5/public_html/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOStatement.php on line 258
+[21-Mar-2021 13:47:17 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 32768 bytes) in /home2/s75fi9i5/public_html/vendor/symfony/debug/Exception/FatalErrorException.php on line 1
+[21-Mar-2021 13:47:17 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 3235840 bytes) in Unknown on line 0
+[21-Mar-2021 13:47:31 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 20480 bytes) in /home2/s75fi9i5/public_html/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOStatement.php on line 258
+[21-Mar-2021 13:47:31 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 32768 bytes) in /home2/s75fi9i5/public_html/vendor/symfony/debug/Exception/FatalErrorException.php on line 1
+[21-Mar-2021 13:47:31 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 3235840 bytes) in Unknown on line 0
+[21-Mar-2021 14:26:07 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 20480 bytes) in /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php on line 392
+[21-Mar-2021 14:26:07 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 32768 bytes) in /home2/s75fi9i5/public_html/vendor/symfony/debug/Exception/FatalErrorException.php on line 1
+[21-Mar-2021 14:26:07 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 3231744 bytes) in Unknown on line 0
+[21-Mar-2021 14:26:29 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 20480 bytes) in /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php on line 392
+[21-Mar-2021 14:26:29 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 32768 bytes) in /home2/s75fi9i5/public_html/vendor/symfony/debug/Exception/FatalErrorException.php on line 1
+[21-Mar-2021 14:26:29 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 3231744 bytes) in Unknown on line 0
+[21-Mar-2021 14:27:05 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 20480 bytes) in /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php on line 392
+[21-Mar-2021 14:27:05 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 32768 bytes) in /home2/s75fi9i5/public_html/vendor/symfony/debug/Exception/FatalErrorException.php on line 1
+[21-Mar-2021 14:27:05 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 3231744 bytes) in Unknown on line 0
+[21-Mar-2021 14:28:32 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 20480 bytes) in /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php on line 392
+[21-Mar-2021 14:28:32 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 32768 bytes) in /home2/s75fi9i5/public_html/vendor/symfony/debug/Exception/FatalErrorException.php on line 1
+[21-Mar-2021 14:28:32 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 3231744 bytes) in Unknown on line 0
+[21-Mar-2021 14:29:19 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 20480 bytes) in /home2/s75fi9i5/public_html/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOStatement.php on line 258
+[21-Mar-2021 14:29:19 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 32768 bytes) in /home2/s75fi9i5/public_html/vendor/symfony/debug/Exception/FatalErrorException.php on line 1
+[21-Mar-2021 14:29:19 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 3235840 bytes) in Unknown on line 0
+[21-Mar-2021 14:30:01 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 20480 bytes) in /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php on line 392
+[21-Mar-2021 14:30:01 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 32768 bytes) in /home2/s75fi9i5/public_html/vendor/symfony/debug/Exception/FatalErrorException.php on line 1
+[21-Mar-2021 14:30:01 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 3231744 bytes) in Unknown on line 0
+[21-Mar-2021 14:30:44 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 20480 bytes) in /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php on line 392
+[21-Mar-2021 14:30:44 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 32768 bytes) in /home2/s75fi9i5/public_html/vendor/symfony/debug/Exception/FatalErrorException.php on line 1
+[21-Mar-2021 14:30:44 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 3231744 bytes) in Unknown on line 0
+[21-Mar-2021 14:32:36 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 20480 bytes) in /home2/s75fi9i5/public_html/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOStatement.php on line 258
+[21-Mar-2021 14:32:36 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 32768 bytes) in /home2/s75fi9i5/public_html/vendor/symfony/debug/Exception/FatalErrorException.php on line 1
+[21-Mar-2021 14:32:36 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 3235840 bytes) in Unknown on line 0
+[21-Mar-2021 14:39:27 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 20480 bytes) in /home2/s75fi9i5/public_html/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOStatement.php on line 258
+[21-Mar-2021 14:39:27 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 32768 bytes) in /home2/s75fi9i5/public_html/vendor/symfony/debug/Exception/FatalErrorException.php on line 1
+[21-Mar-2021 14:39:27 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 3235840 bytes) in Unknown on line 0
+[21-Mar-2021 14:42:06 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 20480 bytes) in /home2/s75fi9i5/public_html/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php on line 392
+[21-Mar-2021 14:42:06 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 32768 bytes) in /home2/s75fi9i5/public_html/vendor/symfony/debug/Exception/FatalErrorException.php on line 1
+[21-Mar-2021 14:42:06 Europe/Amsterdam] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 3272704 bytes) in Unknown on line 0

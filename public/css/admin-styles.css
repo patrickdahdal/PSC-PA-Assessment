@@ -1,0 +1,55 @@
+/*!
+ * Admin pages custom styles
+ */
+
+/* Dashboard */
+div#dashboard a {
+  font-size: 200%;
+}
+
+div.panel-heading {
+  font-size: 125% !important;
+}
+
+/* Test results page */
+table#test-answers tr.sub-row th {
+  text-align: center;
+  padding: 0 16px;
+  font-weight: bold;
+}
+table#test-answers tr.sub-row td {
+  text-align: center;
+  padding: 0 16px;
+  font-weight: bold;
+}
+table#test-answers tr.que-row td {
+  text-align: center;
+}
+table#test-answers tr.que-row td.first {
+  text-align: right;
+  padding-right: 16px;
+}
+table#test-answers tr.que-row td.last {
+  text-align: left;
+  padding-left: 16px;
+}
+
+/* Navigation */
+div.navbar-header a.navbar-brand {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+div.navbar-header a.navbar-brand img {
+  height: 50px !important;
+  border: 0;
+}
+
+div.sidebar {
+  padding-top: 20px !important;
+}
+
+/* Text formatting */
+.larger {
+  font-size: larger;
+}
