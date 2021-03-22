@@ -1,9 +1,9 @@
 <?php
 // FRONTEND routes
 // Public pages
-Route::get('cache/clear',function(){
-    Artisan::call('config:cache');
-});
+// Route::get('cache/clear',function(){
+//     Artisan::call('config:cache');
+// });
 Route::get('/', 'FrontController@index')->name('home');
 Route::get('privacy-policy', 'FrontController@showPage')->name('privacy-policy');
 Route::get('terms-of-service', 'FrontController@showPage')->name('terms-of-service');
