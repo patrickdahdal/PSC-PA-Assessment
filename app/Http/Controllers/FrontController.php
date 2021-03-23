@@ -143,7 +143,7 @@ class FrontController extends Controller
         request()->validate([
             'first_name' => 'required|regex:/^[\pL\s\-]+$/u',
             'last_name'  => 'required|regex:/^[\pL\s\-]+$/u',
-            'gender'     => 'required|in:M,F',
+            'gender'     => 'required|in:M,F,T,N,P',
             'adult'      => 'required|in:Y,N',
             'email'      => 'required|email',
             'gdpr'       => 'required'
