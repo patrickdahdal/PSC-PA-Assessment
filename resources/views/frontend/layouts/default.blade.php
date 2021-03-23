@@ -202,7 +202,7 @@
     </script>
     <!-- end::Global Config -->
 
-    <!--begin:: Global Mandatory Vendors -->
+    {{-- <!--begin:: Global Mandatory Vendors -->
     <script src="{{ asset("theme/assets/vendors/general/jquery/dist/jquery.js") }}" type="text/javascript"></script>
     <script src="{{ asset("theme/assets/vendors/general/popper.js/dist/umd/popper.js") }}" type="text/javascript"></script>
     <script src="{{ asset("theme/assets/vendors/general/bootstrap/dist/js/bootstrap.min.js") }}" type="text/javascript"></script>
@@ -272,9 +272,10 @@
     <!--end::Global Theme Bundle -->
 
     <!--begin::Page Vendors(used by this page) -->
-    <script src="{{ asset("theme/assets/vendors/custom/fullcalendar/fullcalendar.bundle.js") }}" type="text/javascript"></script>
+    <script src="{{ asset("theme/assets/vendors/custom/fullcalendar/fullcalendar.bundle.js") }}" type="text/javascript"></script> --}}
+    <script src="{{ asset("js/global-mandatory-option-vender.min.js") }}" type="text/javascript"></script>
     <script src="//maps.google.com/maps/api/js?key=AIzaSyBTGnKT7dt597vo9QgeQ7BFhvSRP4eiMSM" type="text/javascript"></script>
-    <script src="{{ asset("theme/assets/vendors/custom/gmaps/gmaps.js") }}" type="text/javascript"></script>
+    {{-- <script src="{{ asset("theme/assets/vendors/custom/gmaps/gmaps.js") }}" type="text/javascript"></script>
     <!--end::Page Vendors -->
 
     <!--begin::Page Scripts(used by this page) -->
@@ -283,5 +284,6 @@
 
     <!--begin::Global App Bundle(used by all pages) -->
     <script src="{{ asset("theme/assets/app/bundle/app.bundle.js") }}" type="text/javascript"></script>
-    <!--end::Global App Bundle -->
+    <!--end::Global App Bundle --> --}}
+    <script src="{{ asset("js/combine-js-one.min.js") }}" type="text/javascript"></script>
 @stop

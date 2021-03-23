@@ -25,7 +25,7 @@
     <link rel="icon" href="{{ asset("images/favicon.png") }}" type="image/ico" />
 
     <!-- Mandatory vendors -->
-    <link href="{{ asset("theme/assets/vendors/custom/fullcalendar/fullcalendar.bundle.css") }}" rel="stylesheet" type="text/css" />
+    {{-- <link href="{{ asset("theme/assets/vendors/custom/fullcalendar/fullcalendar.bundle.css") }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset("theme/assets/vendors/general/perfect-scrollbar/css/perfect-scrollbar.css") }}" rel="stylesheet" type="text/css" />
 
     <!-- Optional vendors -->
@@ -50,7 +50,10 @@
     <link href="{{ asset("theme/assets/vendors/general/morris.js/morris.css") }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset("theme/assets/vendors/general/sweetalert2/dist/sweetalert2.css") }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset("theme/assets/vendors/general/socicon/css/socicon.css") }}" rel="stylesheet" type="text/css" />
-    <link href="{{ asset("theme/assets/vendors/custom/vendors/line-awesome/css/line-awesome.css") }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset("theme/assets/vendors/custom/vendors/line-awesome/css/line-awesome.css") }}" rel="stylesheet" type="text/css" /> --}}
+
+    <link href="{{ asset("css/app.blade.css")}}" rel="stylesheet" type="text/css" />
+
     <link href="{{ asset("theme/assets/vendors/custom/vendors/flaticon/flaticon.css") }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset("theme/assets/vendors/custom/vendors/flaticon2/flaticon.css") }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset("theme/assets/vendors/custom/vendors/fontawesome5/css/all.min.css") }}" rel="stylesheet" type="text/css" />
