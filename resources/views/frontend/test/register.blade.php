@@ -46,15 +46,30 @@
                 {!! Form::label('gender', trans('front.test.gender'), ['class' => 'control-label']) !!}
             </div>
             <div class="col-md-5 form-group">
-                <label class="kt-radio kt-radio--bold">
+                <label class="kt-radio kt-radio--bold" style="width: 100%">
+                    {!! Form::radio('gender', 'F', (old('gender') == "F" ? true : false), ['class' => 'control-label']) !!}
+                    @lang('front.test.female')
+                    <span></span>
+                </label>
+                <label class="kt-radio kt-radio--bold" style="width: 100%">
                     {!! Form::radio('gender', 'M', (old('gender') == "M" ? true : false), ['class' => 'control-label']) !!}
                     @lang('front.test.male')
                     <span></span>
                 </label>
-                <br>
-                <label class="kt-radio kt-radio--bold">
-                    {!! Form::radio('gender', 'F', (old('gender') == "F" ? true : false), ['class' => 'control-label']) !!}
-                    @lang('front.test.female')
+                <br>                
+                <label class="kt-radio kt-radio--bold" style="width: 100%">
+                    {!! Form::radio('gender', 'T', (old('gender') == "T" ? true : false), ['class' => 'control-label']) !!}
+                    @lang('front.test.transgender')
+                    <span></span>
+                </label>
+                <label class="kt-radio kt-radio--bold" style="width: 100%">
+                    {!! Form::radio('gender', 'N', (old('gender') == "N" ? true : false), ['class' => 'control-label']) !!}
+                    @lang('front.test.non_binary-conforming')
+                    <span></span>
+                </label>
+                <label class="kt-radio kt-radio--bold" style="width: 100%">
+                    {!! Form::radio('gender', 'P', (old('gender') == "P" ? true : false), ['class' => 'control-label']) !!}
+                    @lang('front.test.prefer_not_to_respond')
                     <span></span>
                 </label>
                 @if ($errors->has('gender'))

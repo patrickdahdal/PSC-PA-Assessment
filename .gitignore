@@ -563,3 +563,8 @@ __pycache__/
 
 # End of https://www.gitignore.io/api/vim,node,linux,macos,windows,laravel,intellij,sublimetext,visualstudio,visualstudiocode,composer
 package-lock.json
+public/css/app.blade.css
+public/js/combine-js-one.js
+public/js/combine-js-one.min.js
+public/js/global-mandatory-option-vender.js
+public/js/global-mandatory-option-vender.min.js
