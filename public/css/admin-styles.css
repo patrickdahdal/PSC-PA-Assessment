@@ -2,6 +2,10 @@
  * Admin pages custom styles
  */
 
+#wrapper {
+  position: relative;
+}
+
 /* Dashboard */
 div#dashboard a {
   font-size: 200%;
@@ -52,4 +56,30 @@ div.sidebar {
 /* Text formatting */
 .larger {
   font-size: larger;
+}
+
+#respondent-datatable_wrapper {
+  min-height: 300px;
+}
+
+#respondent-datatable {
+  min-height: 300px;
+}
+
+.dataTables_processing {
+  display: flex;
+  position: absolute !important;
+  top: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  align-items: center;
+  left: 0 !important;
+  margin: 0 !important;
+  padding: 100px 0 !important;
+  justify-content: center;
+  min-height: 200px;
+}
+
+.main-sidebar .sidebar-menu > li > .treeview-menu {
+  padding-left: 2rem;
 }

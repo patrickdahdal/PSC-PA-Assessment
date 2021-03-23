@@ -63,7 +63,7 @@
             </table>
         </div>
         <div class="text-center">
-             {{$assessments->links() }}
+            {{$assessments->links() }}
         </div>
     </div>
 @stop
@@ -71,8 +71,7 @@
 <script>
 $(document).ready(function() {
     $('.datatable-2').DataTable( {
-        "paging":   false,
-        
+        "paging":   false,        
     } );
 } );
 </script>

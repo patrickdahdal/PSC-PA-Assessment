@@ -11,7 +11,6 @@
                                 <div class="kt-login__head">
                                     <h3 class="kt-login__title">Sign In To Customer Area</h3>
                                 </div>
-
                                 <form class="kt-form" method="POST" action="{{ route('account.auth.login') }}">
                                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                     <input type="hidden" name="_redirect" value="{{ Request::path() }}">

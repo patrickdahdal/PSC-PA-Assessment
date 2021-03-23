@@ -11,7 +11,6 @@ use App\Assessment;
 use App\AssessmentAnswer;
 use App\AssessmentResult;
 use App\AssessmentScore;
-use App\Respondent;
 
 class AssessmentsController extends Controller
 {
