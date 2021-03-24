@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 use App\Http\Controllers\Controller;
 
 use App\Services\AssessmentEvaluator;
@@ -24,8 +25,9 @@ class AssessmentsController extends Controller
     public function index(Request $request)
     {
         if ($request->ajax()) {
+            try {
 
-            $data = Assessment::latest()->get();
+                $data = Assessment::latest()->get();
             return Datatables::of($data)
                 ->addIndexColumn()
                 ->addColumn('id', function($row){
@@ -56,6 +58,11 @@ class AssessmentsController extends Controller
                     return $row->is_incomplete;
                 })->rawColumns(['id', 'full_name', 'company_name','member_code', 'gender', 'action', 'is_incomplete'])                    
                 ->make(true);
+            } catch (\Throwable $e) {
+                Log::error('Asseessments Pagniate : ' . $e->getMessage());
+                return response()->json(['error' => 'something_went_wrong'], 500);
+            }
+
         } else {
             $assessments = Assessment::paginate(50);            
             return view('admin.assessments.index', compact('assessments'));
