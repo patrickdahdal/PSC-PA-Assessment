@@ -47,9 +47,11 @@ class RespondentsController extends Controller
                         return '<a class="btn btn-xs btn-primary" href="'.route('admin.respondents.show', [$row->id]).'">'.Lang::get('global.app.view').'</a>';
                     })->rawColumns(['id', 'full_name', 'company_name','member_code', 'gender', 'action'])                    
                     ->make(true);
+        } else {
+            $respondents = Respondent::all();
+            return view('admin.respondents.index', compact('respondents'));
         }
-            
-        return view('admin.respondents.index');
+                
     }
 
     /**

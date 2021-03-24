@@ -27,40 +27,39 @@ class AssessmentsController extends Controller
 
             $data = Assessment::latest()->get();
             return Datatables::of($data)
-            ->addIndexColumn()
-            ->addColumn('id', function($row){
-                return '<a href="'.route('admin.assessments.score', [$row->id]).'">'.$row->id.'</a>';
-            })->addColumn('full_name', function($row){
-                return '<a href="'.route('admin.respondents.show', [$row->id]).'">'.$row->respondent->first_name.' '.$row->respondent->last_name.'</a>';
-            })->addColumn('company_name', function($row){
-                return '<a href="'.route('admin.customers.show', [$row->respondent->membercode->customer_id]).'">'.$row->respondent->membercode->customer->company_name.'</a>';
-            })->addColumn('member_code', function($row){
-                return $row->respondent->membercode->membercode;
-            })->addColumn('gender', function($row){
-                if ($row->respondent->gender === 'W')
-                    return Lang::get('front.test.female');
-                else if ($row->respondent->gender === 'M')
-                    return Lang::get('front.test.male');
-                else if ($row->respondent->gender === 'T')
-                return Lang::get('front.test.transgender');
-                else if ($row->respondent->gender === 'N')
-                    return Lang::get('front.test.non_binary-conforming');
-                else if ($row->respondent->gender === 'P')
-                    return Lang::get('front.test.prefer_not_to_respond');
-                return ''.Lang::get('front.test.female').'';
-            })->addColumn('adult', function($row){
-                return $row->respondent->adult;            
-            })->addColumn('action', function($row){
-                return '<a class="btn btn-xs btn-success" href="'.route('admin.assessments.score', [$row->id]).'">'.Lang::get('global.assessments.score').'</a>'.'<a class="btn btn-xs btn-info" href="'.route('admin.assessments.answers', [$row->id]).'">'.Lang::get('global.assessments.answers').'</a>';
-            })->addColumn('is_incomplete', function($row){
-                return $row->is_incomplete;
-            })->rawColumns(['id', 'full_name', 'company_name','member_code', 'gender', 'action', 'is_incomplete'])                    
-            ->make(true);
-            return view('admin.assessments.index');
+                ->addIndexColumn()
+                ->addColumn('id', function($row){
+                    return '<a href="'.route('admin.assessments.score', [$row->id]).'">'.$row->id.'</a>';
+                })->addColumn('full_name', function($row){
+                    return '<a href="'.route('admin.respondents.show', [$row->id]).'">'.$row->respondent->first_name.' '.$row->respondent->last_name.'</a>';
+                })->addColumn('company_name', function($row){
+                    return '<a href="'.route('admin.customers.show', [$row->respondent->membercode->customer_id]).'">'.$row->respondent->membercode->customer->company_name.'</a>';
+                })->addColumn('member_code', function($row){
+                    return $row->respondent->membercode->membercode;
+                })->addColumn('gender', function($row){
+                    if ($row->respondent->gender === 'W')
+                        return Lang::get('front.test.female');
+                    else if ($row->respondent->gender === 'M')
+                        return Lang::get('front.test.male');
+                    else if ($row->respondent->gender === 'T')
+                    return Lang::get('front.test.transgender');
+                    else if ($row->respondent->gender === 'N')
+                        return Lang::get('front.test.non_binary-conforming');
+                    else if ($row->respondent->gender === 'P')
+                        return Lang::get('front.test.prefer_not_to_respond');
+                    return ''.Lang::get('front.test.female').'';
+                })->addColumn('adult', function($row){
+                    return $row->respondent->adult;            
+                })->addColumn('action', function($row){
+                    return '<a class="btn btn-xs btn-success" href="'.route('admin.assessments.score', [$row->id]).'">'.Lang::get('global.assessments.score').'</a>'.'<a class="btn btn-xs btn-info" href="'.route('admin.assessments.answers', [$row->id]).'">'.Lang::get('global.assessments.answers').'</a>';
+                })->addColumn('is_incomplete', function($row){
+                    return $row->is_incomplete;
+                })->rawColumns(['id', 'full_name', 'company_name','member_code', 'gender', 'action', 'is_incomplete'])                    
+                ->make(true);
         } else {
             $assessments = Assessment::paginate(50);            
             return view('admin.assessments.index', compact('assessments'));
-        }        
+        }
     }
 
     /**
