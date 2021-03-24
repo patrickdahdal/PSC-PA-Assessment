@@ -54,9 +54,7 @@ class AssessmentsController extends Controller
                         return $row->respondent->adult;            
                     })->addColumn('action', function($row){
                         return '<div></div><a class="btn btn-xs btn-success" href="'.route('admin.assessments.score', [$row->id]).'">'.Lang::get('global.assessments.score').'</a><a class="btn btn-xs btn-info" href="'.route('admin.assessments.answers', [$row->id]).'">'.Lang::get('global.assessments.answers').'</a></div>';
-                    })->addColumn('is_incomplete', function($row){
-                        return $row->is_incomplete;
-                    })->rawColumns(['id', 'full_name', 'company_name','member_code', 'gender', 'action', 'is_incomplete'])                    
+                    })->rawColumns(['id', 'full_name', 'company_name','member_code', 'gender', 'adult', 'action'])                    
                     ->make(true);
             } catch (\Throwable $e) {
                 Log::error('Asseessments Pagniate : ' . $e->getMessage());
