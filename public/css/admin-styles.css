@@ -58,12 +58,15 @@ div.sidebar {
   font-size: larger;
 }
 
-#respondent-datatable_wrapper {
+#respondent-datatable_wrapper,
+#assessment-datatable_wrapper,
+#respondent-datatable,
+#assessment-datatable {
   min-height: 300px;
 }
 
-#respondent-datatable {
-  min-height: 300px;
+#assessment-datatable .btn-info {
+  margin-left: 8px;
 }
 
 .dataTables_processing {

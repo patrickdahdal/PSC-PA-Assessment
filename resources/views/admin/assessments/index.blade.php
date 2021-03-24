@@ -5,20 +5,19 @@
     <h3 class="page-title">@lang('global.assessments.title')</h3>
 
     <div class="panel panel-default">
-        <div class="panel-heading">
+        {{-- <div class="panel-heading">
             @if (count($assessments))
                 @lang('global.app.list_entries', ['count' => count($assessments)])
             @else
                 @lang('global.app.list')
-            @endif
-           
-        </div>
+            @endif           
+        </div> --}}
 
         <div class="panel-body table-responsive">
-            <table class="table table-bordered table-striped {{ count($assessments) ? 'datatable-2' : '' }} dt-select">
+            <table id="assessment-datatable" class="table table-bordered table-striped dt-select">
                 <thead>
                     <tr>
-                        <th style="text-align:center"><input type="checkbox" id="select-all" /></th>
+                        <th style="text-align:center">No</th>
                         <th>ID</th>
                         <th>@lang('global.assessments.fields.respondent')</th>
                         <th>@lang('global.customers.fields.company_name')</th>
@@ -31,7 +30,7 @@
                 </thead>
 
                 <tbody>
-                    @if (count($assessments))
+                    {{-- @if (count($assessments))
                         @foreach ($assessments as $assessment)
                             <tr data-entry-id="{{ $assessment->id }}" {{ $assessment->is_incomplete ? 'class=danger' : '' }}>
                                 <td></td>
@@ -58,20 +57,34 @@
                         <tr>
                             <td colspan="9">@lang('global.app.no_entries_in_table')</td>
                         </tr>
-                    @endif
+                    @endif --}}
                 </tbody>
             </table>
-        </div>
-        <div class="text-center">
-            {{$assessments->links() }}
         </div>
     </div>
 @stop
 @section('javascript')
 <script>
 $(document).ready(function() {
-    $('.datatable-2').DataTable( {
-        "paging":   false,        
+    $('#assessment-datatable').DataTable({
+        processing: true,
+        serverSide: true,
+        pageLength: 50,
+        ajax: "{{ route('admin.assessments.index') }}",
+        columns: [
+            {data: 'DT_RowIndex', searchable: false, orderable: false},
+            {data: 'id'},
+            {data: 'full_name'},
+            {data: 'company_name'},
+            {data: 'member_code'},
+            {data: 'gender'},
+            {data: 'adult'},
+            {data: 'created_at'},
+            {data: 'action', searchable: false, orderable: false}
+        ],
+        createdRow: (row, data, dataIndex, cells) => {            
+            if (data.is_incomplete) $(row).addClass('danger');            
+        }
     } );
 } );
 </script>
