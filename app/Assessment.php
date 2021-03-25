@@ -11,7 +11,6 @@ class Assessment extends Model
 
     protected $table = 'assessments';
     protected $fillable = ['respondent_id'];
-    protected $appends = ['is_incomplete'];
     protected $dates = ['created_at', 'updated_at', 'deleted_at'];
 
     public function respondent()
