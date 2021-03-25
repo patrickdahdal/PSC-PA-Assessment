@@ -25,7 +25,6 @@ class AssessmentsController extends Controller
     {
 
         if ($request->ajax()) {
-            Log::error('Test');
             try {
                 $data = Assessment::latest()->get();
                 return Datatables::of($data)
