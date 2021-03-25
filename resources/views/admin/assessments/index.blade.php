@@ -83,7 +83,7 @@ $(document).ready(function() {
             {data: 'action', searchable: false, orderable: false}
         ],
         createdRow: (row, data, dataIndex, cells) => {
-            if (data.is_incomplete) $(row).addClass('danger');            
+            if (data.incomplete) $(row).addClass('danger');            
         }
     } );
 } );

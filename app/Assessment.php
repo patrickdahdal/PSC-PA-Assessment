@@ -41,4 +41,19 @@ class Assessment extends Model
         return false;
     }
 
+    public function getIncompleteAttribute($id)
+    {
+        try {
+            $num_questions = config('assessment.questions_number', 210);
+            $count = AssessmentAnswer::where('assessment_id', $id)->get()->count();
+
+            if ($count >= $num_questions)
+                return false;
+            else return true;
+        } catch (\Throwable $e) {
+            // Log::info('Error case');
+        }
+        return false;   
+    }
+
 }
