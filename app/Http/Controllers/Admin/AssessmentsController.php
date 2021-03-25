@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Log;
 use App\Http\Controllers\Controller;
 
 use App\Services\AssessmentEvaluator;
@@ -14,7 +13,7 @@ use App\AssessmentResult;
 use App\AssessmentScore;
 use DataTables;
 use Lang;
-
+use Log;
 class AssessmentsController extends Controller
 {
     /**
@@ -51,10 +50,12 @@ class AssessmentsController extends Controller
                             return Lang::get('front.test.prefer_not_to_respond');
                         return Lang::get('front.test.female');
                     })->addColumn('adult', function($row){
-                        return $row->respondent->adult;            
+                        return $row->respondent->adult;                                    
                     })->addColumn('action', function($row){
                         return '<div></div><a class="btn btn-xs btn-success" href="'.route('admin.assessments.score', [$row->id]).'">'.Lang::get('global.assessments.score').'</a><a class="btn btn-xs btn-info" href="'.route('admin.assessments.answers', [$row->id]).'">'.Lang::get('global.assessments.answers').'</a></div>';
-                    })->rawColumns(['id', 'full_name', 'company_name','member_code', 'gender', 'adult', 'action'])                    
+                    })->addColumn('is_incomplete', function($row){
+                        return $row->is_incomplete;                                    
+                    })->rawColumns(['id', 'full_name', 'company_name','member_code', 'gender', 'adult', 'action', 'is_incomplete'])                    
                     ->make(true);
             } catch (\Throwable $e) {
                 Log::error('Asseessments Pagniate : ' . $e->getMessage());

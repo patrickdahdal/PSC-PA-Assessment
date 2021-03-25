@@ -82,7 +82,7 @@ $(document).ready(function() {
             {data: 'created_at'},
             {data: 'action', searchable: false, orderable: false}
         ],
-        createdRow: (row, data, dataIndex, cells) => {            
+        createdRow: (row, data, dataIndex, cells) => {
             if (data.is_incomplete) $(row).addClass('danger');            
         }
     } );
