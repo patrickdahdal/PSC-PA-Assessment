@@ -192,7 +192,7 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         Spatie\Permission\PermissionServiceProvider::class,
-
+        Yajra\DataTables\DataTablesServiceProvider::class,
     ],
 
     /*
@@ -244,10 +244,10 @@ return [
         /*
          * Package Aliases
          */
-        'Image'        => Intervention\Image\Facades\Image::class,
-        'Form'         => Collective\Html\FormFacade::class,
-        'Html'         => Collective\Html\HtmlFacade::class,
-        
+        'Image'         => Intervention\Image\Facades\Image::class,
+        'Form'          => Collective\Html\FormFacade::class,
+        'Html'          => Collective\Html\HtmlFacade::class,
+        'DataTables'    => Yajra\DataTables\Facades\DataTables::class,
     ],
 
 ];
