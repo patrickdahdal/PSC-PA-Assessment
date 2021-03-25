@@ -23,9 +23,10 @@ class AssessmentsController extends Controller
      */
     public function index(Request $request)
     {
-        if ($request->ajax()) {
-            try {
 
+        if ($request->ajax()) {
+            Log::error('Test');
+            try {
                 $data = Assessment::latest()->get();
                 return Datatables::of($data)
                     ->addIndexColumn()
@@ -52,7 +53,7 @@ class AssessmentsController extends Controller
                     })->addColumn('adult', function($row){
                         return $row->respondent->adult;                                    
                     })->addColumn('action', function($row){
-                        return '<div></div><a class="btn btn-xs btn-success" href="'.route('admin.assessments.score', [$row->id]).'">'.Lang::get('global.assessments.score').'</a><a class="btn btn-xs btn-info" href="'.route('admin.assessments.answers', [$row->id]).'">'.Lang::get('global.assessments.answers').'</a></div>';
+                        return '<div><a class="btn btn-xs btn-success" href="'.route('admin.assessments.score', [$row->id]).'">'.Lang::get('global.assessments.score').'</a><a class="btn btn-xs btn-info" href="'.route('admin.assessments.answers', [$row->id]).'">'.Lang::get('global.assessments.answers').'</a></div>';
                     })->addColumn('is_incomplete', function($row){
                         return $row->is_incomplete;                                    
                     })->rawColumns(['id', 'full_name', 'company_name','member_code', 'gender', 'adult', 'action', 'is_incomplete'])                    

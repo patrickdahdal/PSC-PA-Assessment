@@ -26,11 +26,20 @@ class Assessment extends Model
 
     public function getIsIncompleteAttribute()
     {
-        $num_questions = config('assessment.questions_number', 210);
-        if ($this->assessments_answers && count($this->assessments_answers) >= $num_questions) {
-            return false;
-        } else {
-            return true;
+        try {
+            $num_questions = config('assessment.questions_number', 210);
+            if(is_null($this->assessments_answers)) {
+                return true;
+            } 
+            if (count($this->assessments_answers) >= $num_questions) {
+                return false;
+            } else {
+                return true;
+            }
+        } catch (\Throwable $e) {
+            // Log::info('Error case');
         }
+        return false;
     }
+
 }
