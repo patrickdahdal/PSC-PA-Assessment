@@ -26,7 +26,7 @@ class AssessmentsController extends Controller
 
         if ($request->ajax()) {
             try {
-                $data = Assessment::latest()->get();
+                $data = Assessment::latest()->whereNull('deleted_at')->get();
                 return Datatables::of($data)
                     ->addIndexColumn()
                     ->addColumn('id', function($row){
