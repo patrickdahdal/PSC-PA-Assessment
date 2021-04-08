@@ -15,6 +15,7 @@ class Kernel extends ConsoleKernel
     protected $commands = [
         //
         'App\Console\Commands\RemoveAssessment',
+        'App\Console\Commands\RemoveCustomerResetPassword'
     ];
 
     /**
@@ -26,6 +27,7 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule)
     {
         $schedule->command('removeAssessmentJob:RemoveAssessment')->daily();
+        $schedule->command('removeCustomerResetPasswordJob:RemoveCustomerResetPassword')->hourly();
     }
 
     /**

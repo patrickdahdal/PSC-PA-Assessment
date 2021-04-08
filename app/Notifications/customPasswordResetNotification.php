@@ -43,7 +43,7 @@ class customPasswordResetNotification extends Notification
                     ->subject('Reset Password Notification.')
                     ->line('You are receiving this email because we received a password reset request for your account.')
                     ->action('Reset Password', route('customers.password.showResetForm', false).'/'.$this->token)
-                    ->line('This password reset link will expire in :count minutes', ['count' => config('auth.passwords.usrs.expire')])
+                    ->line('This password reset link will expire in 60 minutes')
                     ->line('If you did not request a password reset, no further action is required.')
                     ->line('Thank you for using our application!');
     }
