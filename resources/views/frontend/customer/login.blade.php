@@ -21,6 +21,13 @@
                                     <div class="input-group">
                                         <input class="form-control" type="password" name="password" placeholder="@lang('front.auth.password')">
                                     </div>
+                                    
+                                    <div class="form-group">
+                                        <div class="col-md-6 col-md-offset-4 mt-4">
+                                            <a href="{{ route('customers.password.showLinkRequestForm') }}">Forgot your password?</a>
+                                        </div>
+                                    </div>
+
                                     <div class="row kt-login__extra">
                                         <div class="col">
                                             <label class="kt-checkbox">

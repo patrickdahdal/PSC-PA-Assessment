@@ -51,7 +51,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://staging.personalityassessment.me'),
+    'url' => env('APP_URL', 'https://personalityassessment.me'),
 
     /*
     |--------------------------------------------------------------------------

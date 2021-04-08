@@ -31,6 +31,12 @@ Route::get('account/index', 'CustomerController@resultsIndex')->name('account.in
 Route::get('account/answers/{id}', 'CustomerController@resultsAnswers')->name('account.answers');
 Route::get('account/score/{id}', 'CustomerController@resultsScore')->name('account.score');
 
+Route::group(['prefix' => 'customers'], function() {        
+    Route::get('password/reset', 'Customer\CustomerPasswordController@showLinkRequestForm')->name('customers.password.showLinkRequestForm');
+    Route::post('password/email', 'Customer\CustomerPasswordController@sendResetPasswordMail')->name('customers.password.sendRestLinkEmail');
+    Route::get('password/reset/{token}', 'Customer\CustomerPasswordController@showResetForm')->name('customers.password.showResetForm');
+    Route::post('password/reset', 'Customer\CustomerPasswordController@reset')->name('customers.password.reset');
+});
 
 // ADMIN routes
 // Authentication
