@@ -371,7 +371,8 @@ class AssessmentEvaluator
         // Compute weighted scores and average
         $avg = 0;
         for ($i=0; $i<10; $i++) {
-            $actualWS[$i] = round($this->weighted($this->traitIndexes[$i], 'M', $adult, $userRaw[$this->traitIndexes[$i]], $this->total[$this->traitIndexes[$i]][3], $this->total[$this->traitIndexes[$i]][4]));
+            // $actualWS[$i] = round($this->weighted($this->traitIndexes[$i], 'M', $adult, $userRaw[$this->traitIndexes[$i]], $this->total[$this->traitIndexes[$i]][3], $this->total[$this->traitIndexes[$i]][4]));            
+            $actualWS[$i] = round($this->weighted($this->traitIndexes[$i], $gender !== 'M' || $gender !== 'F' ? 'M' : $gender, $adult, $userRaw[$this->traitIndexes[$i]], $this->total[$this->traitIndexes[$i]][3], $this->total[$this->traitIndexes[$i]][4]));
             $avg += $actualWS[$i];
         }
         $avg = round($avg/10);
