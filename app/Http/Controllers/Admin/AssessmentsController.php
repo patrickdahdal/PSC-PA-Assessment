@@ -32,7 +32,7 @@ class AssessmentsController extends Controller
                     ->addColumn('id', function($row){
                         return '<a href="'.route('admin.assessments.score', [$row->id]).'">'.$row->id.'</a>';
                     })->addColumn('full_name', function($row){
-                        return '<a href="'.route('admin.respondents.show', [$row->id]).'">'.$row->respondent->first_name.' '.$row->respondent->last_name.'</a>';
+                        return '<a href="'.route('admin.respondents.show', [$row->respondent->id]).'">'.$row->respondent->first_name.' '.$row->respondent->last_name.'</a>';
                     })->addColumn('company_name', function($row){
                         return '<a href="'.route('admin.customers.show', [$row->respondent->membercode->customer_id]).'">'.$row->respondent->membercode->customer->company_name.'</a>';
                     })->addColumn('member_code', function($row){
