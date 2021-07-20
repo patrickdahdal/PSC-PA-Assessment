@@ -4,7 +4,7 @@
 @section('content')
     <div class="title-wrapper" style="display: flex; align-items: center; margin: 10px 0">
         <h3 class="page-title" style="margin: 0">@lang('global.assessments.title')</h3>
-        <div class="alert alert-danger" role="alert" style="margin-left: auto">
+        <div class="alert alert-danger" role="alert" style="margin-left: auto; margin-bottom: 0">
             REMINDER ASSESSMENTS WILL 
             DELETED AFTER 90 DAYS.
         </div>          
