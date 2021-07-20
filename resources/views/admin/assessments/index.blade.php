@@ -2,7 +2,14 @@
 @extends('layouts.app')
 
 @section('content')
-    <h3 class="page-title">@lang('global.assessments.title')</h3>
+    <div class="title-wrapper" style="display: flex; align-items: center;">
+        <h3 class="page-title">@lang('global.assessments.title')</h3>
+        <div class="alert alert-danger" role="alert" style="margin-left: auto">
+            REMINDER ASSESSMENTS WILL 
+            DELETED AFTER 90 DAYS.
+        </div>          
+    </div>
+    
 
     <div class="panel panel-default">
         {{-- <div class="panel-heading">
