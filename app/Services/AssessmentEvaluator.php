@@ -313,7 +313,7 @@ class AssessmentEvaluator
      *
      * @return bool
      */
-    public function evaluate($assessment_id, array $ans, $gender, $adult)
+    public function evaluate($assessment_id, array $ans, $gender, $adult, $type = null)
     {
         // Work out scores for Y/M/N/min/max
         for ($j = 1; $j <= $this->noQs; $j++) {
@@ -366,7 +366,7 @@ class AssessmentEvaluator
 
         // Print weighted scores
         $html_content .= "<p>Weighted scores (ranging from -100 to 100) on each of 10 traits:</p>";
-        $html_content .= '<br><table class="table table-bordered table-hover">';
+        $html_content .= '<br><table class="table table-bordered table-hover" style="width: 100%">';
 
         // Compute weighted scores and average
         $avg = 0;
@@ -381,8 +381,11 @@ class AssessmentEvaluator
         for ($i=0; $i<10; $i++) {
             $html_content .= "<tr><td>".$this->traitIndexes[$i]."</td><td align=right>";
             $html_content .= $actualWS[$i]."</td><td>";
-            $html_content .= $this->getEval($actualWS[$i], $avg)."</td><td>";
-            $html_content .= $this->getTraitDescription($this->traitIndexes[$i])."</td></tr>";
+            //Type (NULL Customer Full version, 1 = Respondent Version)
+            if($type == null){
+                $html_content .= $this->getEval($actualWS[$i], $avg)."</td><td>";
+                $html_content .= $this->getTraitDescription($this->traitIndexes[$i])."</td></tr>";
+            }
         }
 
 
@@ -401,169 +404,171 @@ class AssessmentEvaluator
         //END
 
         $html_content .= "</table>";
-        $html_content .= "<br clear='all'>";
-        $html_content .= "<p>";
-        $html_content .= "Generally, a score above 60 is good, above 20 is OK, between -20 and 20 is in ";
-        $html_content .= "need of attention, below -20 is poor and below -60 very poor. ";
-        $html_content .= "Also, ideally, a profile should show relatively little deviation in score from one trait ";
-        $html_content .= "to the next.  The average weighted score for this profile is ".$avg." and any trait ";
-        $html_content .= "significantly abve or below that (40 or more points away) is highlighted above as ";
-        $html_content .= '"High/Low compared to average".';
-        $html_content .= "</p>";
+        if($type == null){
+            $html_content .= "<br clear='all'>";
+            $html_content .= "<p>";
+            $html_content .= "Generally, a score above 60 is good, above 20 is OK, between -20 and 20 is in ";
+            $html_content .= "need of attention, below -20 is poor and below -60 very poor. ";
+            $html_content .= "Also, ideally, a profile should show relatively little deviation in score from one trait ";
+            $html_content .= "to the next.  The average weighted score for this profile is ".$avg." and any trait ";
+            $html_content .= "significantly abve or below that (40 or more points away) is highlighted above as ";
+            $html_content .= '"High/Low compared to average".';
+            $html_content .= "</p>";
 
-        $html_content .= "<p>";
-        $html_content .= "A more specific tool to establish what is very low, low, high ";
-        $html_content .= "and very high on each specific trait is the Scale of Traits Chart ";
-        $html_content .= "you received in your certification training.";
-        $html_content .= "</p>";
-        $html_content .= "<br clear='all'>";
-
+            $html_content .= "<p>";
+            $html_content .= "A more specific tool to establish what is very low, low, high ";
+            $html_content .= "and very high on each specific trait is the Scale of Traits Chart ";
+            $html_content .= "you received in your certification training.";
+            $html_content .= "</p>";
+            $html_content .= "<br clear='all'>";
+        }
         // Graph
         $chart_hash = substr(md5($assessment_id), 0, 16);
-        $html_content .= '<p><img src="/images/score-charts/'. $chart_hash .'.png" id="score-chart"></p>';
+        $html_content .= '<p><img src="'.asset('images/score-charts/'. $chart_hash .'.png'.'').'" id="score-chart"></p>';
         //END
 
         // Print other obeservations
-        $html_content .= "<h4>Other Observations</h4>";
-        $noOtherObs = true;
-        $totalY = 0;
-        $totalM = 0;
-        $totalN = 0;
-        for ($i = 1; $i <= $this->noQs; $i++) {
-            global $totalY, $totalM, $totalN;
-            if ($ans[$i] == 1) $totalY++;
-            if ($ans[$i] == 3) $totalM++;
-            if ($ans[$i] == 5) $totalN++;
-        }
-
-        if ($totalM > ($this->noQs * 0.3)) {
-            $noOtherObs = false;
-            $html_content .= "<p><u>Total questions unanswered or answered with maybe greater than 30%</u>";
-            $html_content .= "<br>Uncertain attitude towards life or unable to think through the questions.</p>";
-        } else if (($totalY + $totalN) < ($this->noQs * 0.3)) {
-            $noOtherObs = false;
-            $html_content .= "<p><u>Total questions answered with definite yes or no less than 30%</u>";
-            $html_content .= "<br>Uncertain attitude towards life or unable to think through the questions.</p>";
-        }
-
-        if ($ans[22] == 1) {
-            $noOtherObs = false;
-            $html_content .= "<p><u>Question 32 answered yes</u>";
-            $html_content .= "<br>Activity (or lack thereof) can be assumed to fluctuate.</p>";
-        }
-
-        if ($ans[197] == 1) {
-            $noOtherObs = false;
-            $html_content .= "<p><u>Question 207 answered yes</u>";
-            $html_content .= "<br>Degree of happiness/depression can be assumed to fluctuate.</p>";
-        }
-
-        if ($ans[22] == 1 and $ans[197] == 1 and $this->isLow($actualWS[3], $avg)) {
-            $noOtherObs = false;
-            $html_content .= "<p><u>Questions 32, 207 both answered yes and low trait D</u>";
-            $html_content .= "<br>Extremely unstable.</p>";
-        }
-
-        if ($this->isLow($actualWS[8], $avg) and $this->isLow($actualWS[9], $avg)) {
-            $noOtherObs = false;
-            $html_content .= "<p><u>Low on trait I and J</u>";
-            $html_content .= "<br>Out of comm.</p>";
-        }
-
-        if ($this->isHigh($actualWS[1], $avg) and $this->isLow($actualWS[3], $avg) and $this->isLow($actualWS[4], $avg)) {
-            $noOtherObs = false;
-            $html_content .= "<p><u>High trait B, Low trait D and E</u>";
-            $html_content .= "<br>Euphoric or manic. Glee of insanity.</p>";
-        }
-
-        if ($this->isLow($actualWS[1], $avg) and $this->isHigh($actualWS[3], $avg)) {
-            $noOtherObs = false;
-            $html_content .= "<p><u>Low trait B, High trait D</u>";
-            $html_content .= '<br>"Well schooled" serene valence.</p>';
-        }
-
-        if ($this->isLow($actualWS[0], $avg) and $this->isLow($actualWS[1], $avg)
-            and $this->isHigh($actualWS[3], $avg) and $this->isHigh($actualWS[4], $avg)) {
-            $noOtherObs = false;
-            $html_content .= "<p><u>Low traits A, B with High trait D and E</u>";
-            $html_content .= "<br>Heading for nervous breakdown.</p>";
-        }
-
-        if ($this->isLow($actualWS[2], $avg) and $this->isHigh($actualWS[4], $avg)) {
-            $noOtherObs = false;
-            $html_content .= "<p><u>Low trait C, High trait E</u>";
-            $html_content .= "<br>Compulsive activity, unable to rest.</p>";
-        }
-
-        if ($this->isHigh($actualWS[5], $avg) and $this->isLow($actualWS[1], $avg) and $this->isLow($actualWS[6], $avg)) {
-            $noOtherObs = false;
-            $html_content .= "<p><u>High trait F, Low traits B, G</u>";
-            $html_content .= "<br>At least two valences, one superior and the other inferior.";
-            if ($this->isLow($actualWS[7], $avg)) {
-                $html_content .= "<br>Low H as well = Paranoid. Hard to get along with";
+        if($type == null){
+            $html_content .= "<h4>Other Observations</h4>";
+            $noOtherObs = true;
+            $totalY = 0;
+            $totalM = 0;
+            $totalN = 0;
+            for ($i = 1; $i <= $this->noQs; $i++) {
+                global $totalY, $totalM, $totalN;
+                if ($ans[$i] == 1) $totalY++;
+                if ($ans[$i] == 3) $totalM++;
+                if ($ans[$i] == 5) $totalN++;
             }
-            $html_content .= "</p>";
 
-        } else if ($this->isHigh($actualWS[5], $avg) and $this->isLow($actualWS[6], $avg)) {
-            $noOtherObs = false;
-            $html_content .= "<p><u>High trait F, Low trait G</u>";
-            $html_content .= "<br>Feels superior.";
-            if ($this->isLow($actualWS[7], $avg)) {
-                $html_content .= "<br>Low H as well = Paranoid. Hard to get along with";
+            if ($totalM > ($this->noQs * 0.3)) {
+                $noOtherObs = false;
+                $html_content .= "<p><u>Total questions unanswered or answered with maybe greater than 30%</u>";
+                $html_content .= "<br>Uncertain attitude towards life or unable to think through the questions.</p>";
+            } else if (($totalY + $totalN) < ($this->noQs * 0.3)) {
+                $noOtherObs = false;
+                $html_content .= "<p><u>Total questions answered with definite yes or no less than 30%</u>";
+                $html_content .= "<br>Uncertain attitude towards life or unable to think through the questions.</p>";
             }
-            $html_content .= "</p>";
 
-        } else if ($this->isLow($actualWS[1], $avg) and $this->isLow($actualWS[6], $avg)) {
-            $noOtherObs = false;
-            $html_content .= "<p><u>Low trait B and G</u>";
-            $html_content .= "<br>Feels inferior.</p>";
-        }
-
-        if ($this->isLow($actualWS[1], $avg) and $this->isLow($actualWS[2], $avg) and $this->isLow($actualWS[3], $avg)) {
-            $noOtherObs = false;
-            $html_content .= "<p><u>Low traits B, C, D</u>";
-            $html_content .= "<br>Neurotic, possible life PTP or stress condition (PTS?).</p>";
-        }
-
-        if ($this->isLow($actualWS[4], $avg) and $this->isLow($actualWS[5], $avg) and $this->isLow($actualWS[9], $avg)) {
-            $noOtherObs = false;
-            $html_content .= "<p><u>Low traits E, F, J</u>";
-            $html_content .= "<br>Low havingness, possible hormone deficiency or other physical disorder.</p>";
-        }
-
-        if ($this->isLow($actualWS[0], $avg) and $this->isLow($actualWS[2], $avg)) {
-            $noOtherObs = false;
-            $html_content .= "<p><u>Low trait A and C</u>";
-            $html_content .= "<br>Angry outbursts.";
-            if ($this->isHigh($actualWS[5], $avg)) {
-                $html_content .= "<br>Particularly so with high trait F.";
+            if ($ans[22] == 1) {
+                $noOtherObs = false;
+                $html_content .= "<p><u>Question 32 answered yes</u>";
+                $html_content .= "<br>Activity (or lack thereof) can be assumed to fluctuate.</p>";
             }
-            $html_content .= "</p>";
-        }
 
-        if ($this->isHighAvg($actualWS[6], $avg) and $this->isHighAvg($actualWS[8], $avg)) {
-            $noOtherObs = false;
-            $html_content .= "<p><u>Higher than average G and I</u>";
-            $html_content .= "<br>Probably lying, has persecution or martyr complex.</p>";
-        }
+            if ($ans[197] == 1) {
+                $noOtherObs = false;
+                $html_content .= "<p><u>Question 207 answered yes</u>";
+                $html_content .= "<br>Degree of happiness/depression can be assumed to fluctuate.</p>";
+            }
 
-        if ($this->isHigh($actualWS[8], $avg) and $this->isLow($actualWS[0], $avg)) {
-            $noOtherObs = false;
-            $html_content .= "<p><u>High I, low A</u>";
-            $html_content .= "<br>Danger of falling prey to confidence tricks.</p>";
-        }
+            if ($ans[22] == 1 and $ans[197] == 1 and $this->isLow($actualWS[3], $avg)) {
+                $noOtherObs = false;
+                $html_content .= "<p><u>Questions 32, 207 both answered yes and low trait D</u>";
+                $html_content .= "<br>Extremely unstable.</p>";
+            }
 
-        if ($this->isHigh($actualWS[9], $avg) and
-            ($this->isLow($actualWS[7], $avg) or $this->isLow($actualWS[8], $avg))) {
-            $noOtherObs = false;
-            $html_content .= "<p><u>High J, low H or I</u>";
-            $html_content .= "<br>Communication is compulsive.</p>";
-        }
+            if ($this->isLow($actualWS[8], $avg) and $this->isLow($actualWS[9], $avg)) {
+                $noOtherObs = false;
+                $html_content .= "<p><u>Low on trait I and J</u>";
+                $html_content .= "<br>Out of comm.</p>";
+            }
 
-        if ($noOtherObs) {
-            $html_content .= "<p>None.</p>";
-        }
+            if ($this->isHigh($actualWS[1], $avg) and $this->isLow($actualWS[3], $avg) and $this->isLow($actualWS[4], $avg)) {
+                $noOtherObs = false;
+                $html_content .= "<p><u>High trait B, Low trait D and E</u>";
+                $html_content .= "<br>Euphoric or manic. Glee of insanity.</p>";
+            }
 
+            if ($this->isLow($actualWS[1], $avg) and $this->isHigh($actualWS[3], $avg)) {
+                $noOtherObs = false;
+                $html_content .= "<p><u>Low trait B, High trait D</u>";
+                $html_content .= '<br>"Well schooled" serene valence.</p>';
+            }
+
+            if ($this->isLow($actualWS[0], $avg) and $this->isLow($actualWS[1], $avg)
+                and $this->isHigh($actualWS[3], $avg) and $this->isHigh($actualWS[4], $avg)) {
+                $noOtherObs = false;
+                $html_content .= "<p><u>Low traits A, B with High trait D and E</u>";
+                $html_content .= "<br>Heading for nervous breakdown.</p>";
+            }
+
+            if ($this->isLow($actualWS[2], $avg) and $this->isHigh($actualWS[4], $avg)) {
+                $noOtherObs = false;
+                $html_content .= "<p><u>Low trait C, High trait E</u>";
+                $html_content .= "<br>Compulsive activity, unable to rest.</p>";
+            }
+
+            if ($this->isHigh($actualWS[5], $avg) and $this->isLow($actualWS[1], $avg) and $this->isLow($actualWS[6], $avg)) {
+                $noOtherObs = false;
+                $html_content .= "<p><u>High trait F, Low traits B, G</u>";
+                $html_content .= "<br>At least two valences, one superior and the other inferior.";
+                if ($this->isLow($actualWS[7], $avg)) {
+                    $html_content .= "<br>Low H as well = Paranoid. Hard to get along with";
+                }
+                $html_content .= "</p>";
+
+            } else if ($this->isHigh($actualWS[5], $avg) and $this->isLow($actualWS[6], $avg)) {
+                $noOtherObs = false;
+                $html_content .= "<p><u>High trait F, Low trait G</u>";
+                $html_content .= "<br>Feels superior.";
+                if ($this->isLow($actualWS[7], $avg)) {
+                    $html_content .= "<br>Low H as well = Paranoid. Hard to get along with";
+                }
+                $html_content .= "</p>";
+
+            } else if ($this->isLow($actualWS[1], $avg) and $this->isLow($actualWS[6], $avg)) {
+                $noOtherObs = false;
+                $html_content .= "<p><u>Low trait B and G</u>";
+                $html_content .= "<br>Feels inferior.</p>";
+            }
+
+            if ($this->isLow($actualWS[1], $avg) and $this->isLow($actualWS[2], $avg) and $this->isLow($actualWS[3], $avg)) {
+                $noOtherObs = false;
+                $html_content .= "<p><u>Low traits B, C, D</u>";
+                $html_content .= "<br>Neurotic, possible life PTP or stress condition (PTS?).</p>";
+            }
+
+            if ($this->isLow($actualWS[4], $avg) and $this->isLow($actualWS[5], $avg) and $this->isLow($actualWS[9], $avg)) {
+                $noOtherObs = false;
+                $html_content .= "<p><u>Low traits E, F, J</u>";
+                $html_content .= "<br>Low havingness, possible hormone deficiency or other physical disorder.</p>";
+            }
+
+            if ($this->isLow($actualWS[0], $avg) and $this->isLow($actualWS[2], $avg)) {
+                $noOtherObs = false;
+                $html_content .= "<p><u>Low trait A and C</u>";
+                $html_content .= "<br>Angry outbursts.";
+                if ($this->isHigh($actualWS[5], $avg)) {
+                    $html_content .= "<br>Particularly so with high trait F.";
+                }
+                $html_content .= "</p>";
+            }
+
+            if ($this->isHighAvg($actualWS[6], $avg) and $this->isHighAvg($actualWS[8], $avg)) {
+                $noOtherObs = false;
+                $html_content .= "<p><u>Higher than average G and I</u>";
+                $html_content .= "<br>Probably lying, has persecution or martyr complex.</p>";
+            }
+
+            if ($this->isHigh($actualWS[8], $avg) and $this->isLow($actualWS[0], $avg)) {
+                $noOtherObs = false;
+                $html_content .= "<p><u>High I, low A</u>";
+                $html_content .= "<br>Danger of falling prey to confidence tricks.</p>";
+            }
+
+            if ($this->isHigh($actualWS[9], $avg) and
+                ($this->isLow($actualWS[7], $avg) or $this->isLow($actualWS[8], $avg))) {
+                $noOtherObs = false;
+                $html_content .= "<p><u>High J, low H or I</u>";
+                $html_content .= "<br>Communication is compulsive.</p>";
+            }
+
+            if ($noOtherObs) {
+                $html_content .= "<p>None.</p>";
+            }
+        }
         $html_content .= "<br><br>";
 
         return $html_content;

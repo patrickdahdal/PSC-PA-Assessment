@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers\customer;
 
-use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
-use App\CustomerResetPassword;
-use App\Customer;
-use Validator;
-use Hash;
 use Log;
+use Hash;
+use Validator;
+use App\Customer;
+use Illuminate\Http\Request;
+use App\CustomerResetPassword;
+use App\Http\Controllers\Controller;
 
 class CustomerPasswordController extends Controller
 {
@@ -19,7 +19,7 @@ class CustomerPasswordController extends Controller
     }
 
     public function sendResetPasswordMail(Request $request)
-    {        
+    {   
         $email = $request->email;
         $passwordReset = Customer::where('email', '=', $email)->first();
         if ($passwordReset) {

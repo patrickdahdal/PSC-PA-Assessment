@@ -3,7 +3,7 @@
 namespace App\Services;
 
 use Illuminate\Support\Facades\App;
-use Log;
+
 class ChartBuilder
 {
     /**
@@ -20,6 +20,7 @@ class ChartBuilder
         if (empty($data) || count($data) != 10) {
             return false;
         }
+        
 
         // Chart legend
         $legend = ['A' => 'Attention', 'B' => 'Emotion', 'C' => 'Composure', 'D' => 'Certainty', 'E' => 'Activity',
@@ -54,9 +55,15 @@ class ChartBuilder
 
         // Font settings
         // FIXME: switch between Win/Unix file paths
-        $font    = public_path().'\google-fonts\robotocondensed\RobotoCondensed-Regular.ttf';
-        $fontBig = public_path().'\google-fonts\roboto\Roboto-Bold.ttf';
-
+        if (!App::environment('local')) {
+            $font    = 'C:\wamp64\www\pa-personalityassessment\public\google-fonts\robotocondensed\RobotoCondensed-Regular.ttf';
+            $fontBig = 'C:\wamp64\www\pa-personalityassessment\public\google-fonts\roboto\Roboto-Bold.ttf';
+        } else {
+            $font    = public_path('google-fonts/robotocondensed/RobotoCondensed-Regular.ttf');
+            $fontBig = public_path('google-fonts/roboto/Roboto-Bold.ttf');
+        }
+       
+        
         $fontSize     = 11;
         $fontSizeBig  = 12;
 
@@ -107,15 +114,11 @@ class ChartBuilder
             } else {
                 imageline($chart, $gridLeft, $y, $gridRight, $y, $gridColor);
             }
-
+            
             // Draw right aligned label
             $yLabel = $i - $yAxisCorrection;
-            try {
-                $labelBox = imagettfbbox($fontSize, 0, $font, $yLabel);
-            } catch (\Throwable $e) {
-                Log::error($e->getMessage());
-            }
-                
+            
+            $labelBox = imagettfbbox($fontSize, 0, $font, $yLabel);
             $labelWidth = $labelBox[4] - $labelBox[0];
 
             $labelX = $gridLeft - $labelWidth - $labelMargin;
