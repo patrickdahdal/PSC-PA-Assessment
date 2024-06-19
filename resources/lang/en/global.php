@@ -76,6 +76,7 @@ return [
             'full_name' => 'Name',
             'title' => 'Title',
             'email' => 'Email',
+            'test_email' => 'Test Email',
             'phone' => 'Phone',
             'membercode' => 'Membercode',
             'password' => 'Password',

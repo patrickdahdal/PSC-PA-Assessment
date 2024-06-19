@@ -10,18 +10,19 @@ use Illuminate\Notifications\Messages\MailMessage;
 class RespondentScore extends Notification
 {
     use Queueable;
-    public $respondent, $email, $name, $results, $chart;
+    public $respondent, $email, $name, $results, $chart, $customer;
     /**
      * Create a new notification instance.
      *
      * @return void
      */
-    public function __construct($respondent, $results)
+    public function __construct($respondent, $results, $customer)
     {
         $this->respondent = $respondent;
         $this->email = $this->respondent->email;
         $this->name = $this->respondent->first_name.' '.$this->respondent->last_name;
         $this->results = $results;
+        $this->customer = $customer;
     }
 
     /**
@@ -45,6 +46,10 @@ class RespondentScore extends Notification
     {   
         return (new MailMessage)
             ->subject("Your Test Results")
-            ->markdown('email.respondent', ['results' => $this->results]);
+            ->markdown('email.respondent', [
+                'respondent' => $this->respondent,
+                'results' => $this->results,
+                'customer' => $this->customer
+            ]);
     }
 }

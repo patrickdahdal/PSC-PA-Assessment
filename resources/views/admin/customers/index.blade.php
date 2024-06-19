@@ -34,24 +34,34 @@
                         <th>@lang('global.customers.fields.last_name')</th>
                         <th>@lang('global.customers.fields.title')</th>
                         <th>@lang('global.customers.fields.email')</th>
+                        <th>@lang('global.customers.fields.test_email')</th>
                         <th>@lang('global.customers.fields.phone')</th>
                         <th>@lang('global.customers.fields.membercode')</th>
                         <th>@lang('global.customers.fields.active')</th>
                         <th>&nbsp;</th>
                     </tr>
                 </thead>
-                
+
                 <tbody>
                     @if (count($customers))
                         @foreach ($customers as $customer)
                             <tr data-entry-id="{{ $customer->id }}">
                                 <td></td>
-                                <td style="text-align:center"><a href="{{ url("/admin/customers/{$customer->id}") }}">{{ $customer->id }}</a></td>
-                                <td><a href="{{ url("/admin/customers/{$customer->id}") }}">{{ $customer->company_name }}</a></td>
+                                <td style="text-align:center"><a
+                                        href="{{ url("/admin/customers/{$customer->id}") }}">{{ $customer->id }}</a></td>
+                                <td><a
+                                        href="{{ url("/admin/customers/{$customer->id}") }}">{{ $customer->company_name }}</a>
+                                </td>
                                 <td>{{ $customer->first_name }}</td>
                                 <td>{{ $customer->last_name }}</td>
                                 <td>{{ $customer->title }}</td>
                                 <td>{{ $customer->email }}</td>
+                                <td>
+                                    {{-- {{ $customer->send_test_email }} --}}
+                                    <input type="checkbox" class="SendEmail" data-on="Yes" data-off="No" data-height="30"
+                                        data-id={{ $customer->id }} {{ $customer->send_test_email ? 'checked' : '' }}
+                                        data-toggle="toggle">
+                                </td>
                                 <td>{{ $customer->phone }}</td>
                                 <td>
                                     @if ($customer->membercode)
@@ -62,8 +72,10 @@
                                 </td>
                                 <td>{{ $customer->active ? 'Yes' : 'No' }}</td>
                                 <td>
-                                    <a href="{{ route('admin.customers.show', [$customer->id]) }}" class="btn btn-xs btn-primary">@lang('global.app.view')</a>
-                                    <a href="{{ route('admin.customers.edit', [$customer->id]) }}" class="btn btn-xs btn-warning">@lang('global.app.edit')</a>
+                                    <a href="{{ route('admin.customers.show', [$customer->id]) }}"
+                                        class="btn btn-xs btn-primary">@lang('global.app.view')</a>
+                                    <a href="{{ route('admin.customers.edit', [$customer->id]) }}"
+                                        class="btn btn-xs btn-warning">@lang('global.app.edit')</a>
                                 </td>
                             </tr>
                         @endforeach
@@ -77,8 +89,28 @@
         </div>
     </div>
 @stop
-@section('javascript') 
-    <script>
+@section('javascript')
+    {{-- <script>
         window.route_mass_crud_entries_destroy = '{{ route('admin.customers.mass_destroy') }}';
+    </script> --}}
+    <script>
+        $(document).ready(function() {
+            $('.SendEmail').change(function() {
+                $.ajaxSetup({
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    }
+                });
+
+                var id = ($(this).attr("data-id"));
+                $.ajax({
+                    type: "GET",
+                    url: "/admin/toggle/test-email/"+ id,
+                    success: function(results) {
+                        console.log(results);
+                    }
+                });
+            });
+        });
     </script>
 @endsection

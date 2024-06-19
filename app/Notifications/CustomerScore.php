@@ -12,16 +12,18 @@ class CustomerScore extends Notification
     use Queueable;
     public $customer;
     public $results;
+    public $respondent;
 
     /**
      * Create a new notification instance.
      *
      * @return void
      */
-    public function __construct($customer, $results)
+    public function __construct($customer, $results, $respondent)
     {
         $this->customer = $customer;
         $this->results = $results;
+        $this->respondent = $respondent;
     }
 
     /**
@@ -45,6 +47,10 @@ class CustomerScore extends Notification
     {
         return (new MailMessage)
             ->subject("New Test Results")
-            ->markdown('email.customer', ['results' => $this->results]);
+            ->markdown('email.customer', [
+                'results' => $this->results, 
+                'customer' => $this->customer, 
+                'respondent' => $this->respondent
+            ]);
     }
 }

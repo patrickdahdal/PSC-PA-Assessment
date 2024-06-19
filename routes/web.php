@@ -73,6 +73,9 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'as' => 'admin.'], 
         'respondents' => 'Admin\RespondentsController'
     ]);
 
+    
+    Route::get('/toggle/test-email/{id}', 'Admin\CustomersController@toggleEmail')->name('test.email');
+
     // Assessments, Questions and Traits routes
     Route::get('assessments', 'Admin\AssessmentsController@index')->name('assessments.index');
     Route::get('assessments/answers/{id}', 'Admin\AssessmentsController@answers')->name('assessments.answers');

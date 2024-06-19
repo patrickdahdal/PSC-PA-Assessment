@@ -476,8 +476,10 @@ class FrontController extends Controller
             imagepng($chart, $fp);
 
             // Send Notifications
-            $respondent->notify(new RespondentScore($respondent, $respondentResults));
-            $membercode->customer->notify(new CustomerScore($membercode->customer, $customerResults));
+            if($membercode->customer->send_test_email){
+                $respondent->notify(new RespondentScore($respondent, $respondentResults, $membercode->customer));
+                $membercode->customer->notify(new CustomerScore($membercode->customer, $customerResults, $respondent));
+            }
             // Unset session variables since the found assessment is complete
             session()->forget('membercode_id');
             session()->forget('membercode');
