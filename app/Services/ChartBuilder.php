@@ -59,8 +59,10 @@ class ChartBuilder
             $font    = 'C:\wamp64\www\pa-personalityassessment\public\google-fonts\robotocondensed\RobotoCondensed-Regular.ttf';
             $fontBig = 'C:\wamp64\www\pa-personalityassessment\public\google-fonts\roboto\Roboto-Bold.ttf';
         } else {
-            $font    = public_path('google-fonts/robotocondensed/RobotoCondensed-Regular.ttf');
-            $fontBig = public_path('google-fonts/roboto/Roboto-Bold.ttf');
+            $font    = dirname(__FILE__) . "/google-fonts/robotocondensed/RobotoCondensed-Regular.ttf"; //public_path('google-fonts/robotocondensed/RobotoCondensed-Regular.ttf');
+            $fontBig = dirname(__FILE__) . "/google-fonts/roboto/Roboto-Bold.ttf"; //public_path('google-fonts/roboto/Roboto-Bold.ttf');
+            // $font    = public_path('google-fonts/robotocondensed/RobotoCondensed-Regular.ttf');
+            // $fontBig = public_path('google-fonts/roboto/Roboto-Bold.ttf');
         }
        
         
