@@ -202,6 +202,8 @@
     </script>
     <!-- end::Global Config -->
 
+    <script src="{{ asset('theme/assets/vendors/general/popper.js/dist/umd/popper.js') }}" type="text/javascript"></script>
+
     {{-- <!--begin:: Global Mandatory Vendors -->
     <script src="{{ asset("theme/assets/vendors/general/jquery/dist/jquery.js") }}" type="text/javascript"></script>
     <script src="{{ asset("theme/assets/vendors/general/popper.js/dist/umd/popper.js") }}" type="text/javascript"></script>

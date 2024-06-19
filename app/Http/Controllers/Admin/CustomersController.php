@@ -164,4 +164,29 @@ class CustomersController extends Controller
         return redirect()->route('admin.customers.index')
             ->with('success', 'Customer deleted successfully');
     }
+    /**
+     * Delete all selected User at once.
+     *
+     * @param Request $request
+     */
+    public function customersMassDestroy(Request $request)
+    {
+        
+        if ($request->input('ids')) {
+            $customers = Customer::whereIn('id', $request->input('ids'))->get();
+
+            foreach ($customers as $customer) {
+                // Soft-delete all related models
+                $membercode = $customer->membercode;
+                foreach ($membercode->respondents as $r) {
+                    foreach ($r->assessments as $a) {
+                        $a->delete();
+                    }
+                    $r->delete();
+                }
+                $membercode->delete();
+                $customer->delete();
+            }
+        }
+    }
 }

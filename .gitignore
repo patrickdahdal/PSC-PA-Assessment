@@ -1,5 +1,6 @@
 # Created by https://www.gitignore.io/api/vim,node,linux,macos,windows,laravel,intellij,sublimetext,visualstudio,visualstudiocode,composer
 
+public/images/*
 ### Composer ###
 composer.phar
 /vendor/
