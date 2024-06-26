@@ -27,9 +27,7 @@
 
 <p style="margin-bottom: 20px;">Best regards,</p>
 <p>
-    Patrick Dahdal<br>
-    Founder and CEO<br>
-    The Personality Science Company
+    The Personality Assessment Team
 </p>
 
 <p style="font-size: smaller; font-style: italic;">

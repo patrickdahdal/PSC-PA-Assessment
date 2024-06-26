@@ -20,15 +20,18 @@ class ChartBuilder
         if (empty($data) || count($data) != 10) {
             return false;
         }
-        
 
         // Chart legend
-        $legend = ['A' => 'Attention', 'B' => 'Emotion', 'C' => 'Composure', 'D' => 'Certainty', 'E' => 'Activity',
-            'F' => 'Boldness', 'G' => 'Responsibility', 'H' => 'Correct Estimation', 'I' => 'Empathy', 'J' => 'Communication'];
+        $legend = [
+            'A' => 'Attention', 'B' => 'Emotion', 'C' => 'Composure', 'D' => 'Certainty', 'E' => 'Activity',
+            'F' => 'Boldness', 'G' => 'Responsibility', 'H' => 'Correct Estimation', 'I' => 'Empathy', 'J' => 'Communication'
+        ];
 
         // Traits labels alignment x-axis offsets in px
-        $offset = ['A' => 25, 'B' => 20, 'C' => 30, 'D' => 20, 'E' => 16,
-            'F' => 25, 'G' => 35, 'H' => 50, 'I' => 25, 'J' => 40];
+        $offset = [
+            'A' => 25, 'B' => 20, 'C' => 30, 'D' => 20, 'E' => 16,
+            'F' => 25, 'G' => 35, 'H' => 50, 'I' => 25, 'J' => 40
+        ];
 
         // Chart settings and create image
         // Image dimensions
@@ -51,21 +54,17 @@ class ChartBuilder
         $yMinValue   = -100;
         $yMaxValue   = 100;
         $yAxisHeight = $yMaxValue - $yMinValue;
-        $yAxisCorrection = ($yMinValue < 0 ? abs($yMinValue) : 0);
+        $yAxisCorrection = abs($yMinValue);
 
         // Font settings
-        // FIXME: switch between Win/Unix file paths
-        if (!App::environment('local')) {
+        if (App::environment('local')) {
             $font    = 'C:\wamp64\www\pa-personalityassessment\public\google-fonts\robotocondensed\RobotoCondensed-Regular.ttf';
             $fontBig = 'C:\wamp64\www\pa-personalityassessment\public\google-fonts\roboto\Roboto-Bold.ttf';
         } else {
-            $font    = dirname(__FILE__) . "/google-fonts/robotocondensed/RobotoCondensed-Regular.ttf"; //public_path('google-fonts/robotocondensed/RobotoCondensed-Regular.ttf');
-            $fontBig = dirname(__FILE__) . "/google-fonts/roboto/Roboto-Bold.ttf"; //public_path('google-fonts/roboto/Roboto-Bold.ttf');
-            // $font    = public_path('google-fonts/robotocondensed/RobotoCondensed-Regular.ttf');
-            // $fontBig = public_path('google-fonts/roboto/Roboto-Bold.ttf');
+            $font    = public_path('google-fonts/robotocondensed/RobotoCondensed-Regular.ttf');
+            $fontBig = public_path('google-fonts/roboto/Roboto-Bold.ttf');
         }
-       
-        
+
         $fontSize     = 11;
         $fontSizeBig  = 12;
 
@@ -116,10 +115,10 @@ class ChartBuilder
             } else {
                 imageline($chart, $gridLeft, $y, $gridRight, $y, $gridColor);
             }
-            
+
             // Draw right aligned label
             $yLabel = $i - $yAxisCorrection;
-            
+
             $labelBox = imagettfbbox($fontSize, 0, $font, $yLabel);
             $labelWidth = $labelBox[4] - $labelBox[0];
 
@@ -134,11 +133,11 @@ class ChartBuilder
         imagettftext($chart, $fontSize, 0, 7, $yLegendScore, $labelColor, $font, 'Score');
 
         // Draw x- and y-axis
-        imageline($chart, $gridLeft, 0, $gridLeft, $gridBottom, $axisColor);
+        imageline($chart, $gridLeft, $gridTop, $gridLeft, $gridBottom, $axisColor);
         imageline($chart, $gridLeft, $gridBottom, $gridRight, $gridBottom, $axisColor);
 
         // Draw top border line
-        imageline($chart, $gridLeft, 1, $gridRight, 1, $axisColor);
+        imageline($chart, $gridLeft, $gridTop, $gridRight, $gridTop, $axisColor);
 
         // Draw separator line between 'Traits' and 'Score'
         imageline($chart, $gridLeft, ($yLegendTrait + 10), $gridRight, ($yLegendTrait + 10), $axisColor);
@@ -146,22 +145,22 @@ class ChartBuilder
         // Draw the bars with labels
         $barSpacing = $gridWidth / count($data);
         $itemX = $gridLeft + $barSpacing / 2;
+        $zeroY = $gridBottom - ($yAxisCorrection / $yAxisHeight * $gridHeight);
 
         foreach ($data as $key => $score) {
             // Draw the bar
             $x1 = $itemX - $barWidth / 2;
-            $y1 = $gridBottom - ($score + $yAxisCorrection) / $yAxisHeight * $gridHeight;
             $x2 = $itemX + $barWidth / 2;
-            $y2 = $gridBottom - $lineWidth;
+
+            if ($score >= 0) {
+                $y1 = $zeroY - ($score / $yAxisHeight * $gridHeight);
+                $y2 = $zeroY;
+            } else {
+                $y1 = $zeroY;
+                $y2 = $zeroY - ($score / $yAxisHeight * $gridHeight);
+            }
 
             imagefilledrectangle($chart, $x1, $y1, $x2, $y2, $barColors[$key]);
-
-            // Draw the line
-            if ($key != 'A') {
-                $lineX = $itemX - $barWidth - 20;
-                $lineY = $gridBottom - $lineWidth;
-                imageline($chart, $lineX, 0, $lineX, $lineY, $gridColor);
-            }
 
             // Draw the label
             $labelBox = imagettfbbox($fontSize, 0, $font, $key);
@@ -183,9 +182,9 @@ class ChartBuilder
         }
 
         // Draw right border line
-        $lineX = $itemX - $barWidth - 20;
-        imageline($chart, $lineX, 0, $lineX, $gridBottom, $axisColor);
+        imageline($chart, $gridRight, $gridTop, $gridRight, $gridBottom, $axisColor);
 
         return $chart;
     }
 }
+

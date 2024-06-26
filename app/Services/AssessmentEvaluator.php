@@ -379,7 +379,7 @@ class AssessmentEvaluator
 
         // Continue printing scores
         for ($i=0; $i<10; $i++) {
-            $html_content .= "<tr><td>".$this->traitIndexes[$i]."</td><td align=right>";
+            $html_content .= "<tr><td>".$this->traitIndexes[$i]."</td><td align=right width=55px>";
             $html_content .= $actualWS[$i]."</td><td>";
             //Type (NULL Customer Full version, 1 = Respondent Version)
             if($type == null){
