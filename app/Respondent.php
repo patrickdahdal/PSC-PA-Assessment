@@ -4,11 +4,12 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Facades\DB;
 
 class Respondent extends Model
 {
-    use SoftDeletes;
+    use SoftDeletes, Notifiable;
 
     protected $table = 'respondents';
     protected $fillable = ['membercode_id', 'first_name', 'last_name', 'gender', 'adult', 'email', 'phone', 'best_reached', 'remark'];

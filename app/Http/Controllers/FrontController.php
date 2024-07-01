@@ -5,10 +5,18 @@ namespace App\Http\Controllers;
 use App\Answer;
 use App\Assessment;
 use App\AssessmentAnswer;
+use App\AssessmentResult;
+use App\AssessmentScore;
+use App\Customer;
 use App\Http\Requests;
 use App\Membercode;
+use App\Notifications\CustomerScore;
+use App\Notifications\RespondentScore;
 use App\Question;
 use App\Respondent;
+use App\Services\AssessmentEvaluator;
+use App\Services\AssessmentEvaluatorEmail;
+use App\Services\ChartBuilder;
 use Hash;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\View;
@@ -186,6 +194,7 @@ class FrontController extends Controller
      */
     public function assessmentWizard(Request $request)
     {
+        // dd($request->all());
         // Test/Assessment wizard settings
         $num_questions = config('assessment.questions_number', 210);
         $per_page      = config('assessment.questions_per_page', 15);
@@ -309,13 +318,13 @@ class FrontController extends Controller
                 );
             }
 
+            $this->sendNotifications();
             // Unset session variables since the PAA test is completed now
             $request->session()->forget('membercode_id');
             $request->session()->forget('membercode');
             $request->session()->forget('respondent_id');
             $request->session()->forget('assessment_id');
             $request->session()->forget('page_num');
-
             // Assessment wizard was successfully completed!
             return redirect()->route('thank-you');
 
@@ -438,5 +447,146 @@ class FrontController extends Controller
             }
         }
     }
+
+    private function sendNotifications()
+    {
+        $respondent = Respondent::where('id', session('respondent_id'))->where('membercode_id', session('membercode_id'))->first();
+        $membercode = Membercode::where('id', session('membercode_id'))->first();
+        $id = session('assessment_id');
+        //$customer = Customer::findOrFail($membercode->customer_id);
+        $assessment = Assessment::findOrFail($id);
+
+        // Check if assessment is complete with all answers
+        if ($assessment->is_incomplete) {
+            $error_msg = 'ERROR: The selected assessment is incomplete. Please contact system administrator for more information.';
+
+            return back()->withErrors([$error_msg]);
+        }
+
+        // Create score graph image
+        $score = AssessmentScore::where('assessment_id', $id)->get();
+
+        // Evaluate assessment, calculate score and create graph/chart image
+        if (!count($score)) {
+                $data = [];
+                foreach ($assessment->assessments_answers as $answer) {
+                    $data[$answer->question_id] = $answer->answer->answer;
+                }
+
+            $evaluatorService = new AssessmentEvaluatorEmail();
+            $respondentResults = $evaluatorService->evaluate($id, $data, $assessment->respondent->gender, $assessment->respondent->adult, 1);
+            $customerResults = $evaluatorService->evaluate($id, $data, $assessment->respondent->gender, $assessment->respondent->adult, null);
+
+            // Store results evaluation in html format
+            AssessmentResult::create([
+                'assessment_id' => $id,
+                'content'       => $customerResults
+            ]);
+
+            // Create score graph image
+            $score = AssessmentScore::where('assessment_id', $id)->get();
+            $traitData = [];
+            foreach ($score as $trait_score) {
+                $traitData[$trait_score->trait->key] = $trait_score->score;
+            }
+            // $traitData = [ "A" => -20,
+            // "B" => -10,
+            // "C" => -53,
+            // "D" => -16,
+            // "E" => -64,
+            // "F" => -20,
+            // "G" => -84,
+            // "H" => -36,
+            // "I" => -75,
+            // "J" => -55];
+            $chart = ChartBuilder::buildEmailChartImage($traitData);
+
+            // Store image on file server
+            $chart_hash = substr(md5($id), 0, 16);
+            $filename = 'images/score-charts/'. $chart_hash .'.png';
+            $fp = fopen($filename, 'w');
+            imagepng($chart, $fp);
+            // dd($respondentResults);
+            // Send Notifications
+            if($membercode->customer->send_test_email){
+                $respondent->notify(new RespondentScore($respondent, $respondentResults, $membercode->customer));
+                $membercode->customer->notify(new CustomerScore($membercode->customer, $customerResults, $respondent));
+            }
+            // Unset session variables since the found assessment is complete
+            session()->forget('membercode_id');
+            session()->forget('membercode');
+            session()->forget('respondent_id');
+            session()->forget('assessment_id');
+            session()->forget('page_num');
+        }
+    }
+
+    // private function sendNotifications()
+    // {
+    //     $respondent = Respondent::where('id', session('respondent_id'))->where('membercode_id', session('membercode_id'))->first();
+    //     $membercode = Membercode::where('id', session('membercode_id'))->first();
+    //     $id = session('assessment_id');
+    //     //$customer = Customer::findOrFail($membercode->customer_id);
+    //     $assessment = Assessment::findOrFail($id);
+
+    //     // Check if assessment is complete with all answers
+    //     if ($assessment->is_incomplete) {
+    //         $error_msg = 'ERROR: The selected assessment is incomplete. Please contact system administrator for more information.';
+
+    //         return back()->withErrors([$error_msg]);
+    //     }
+
+    //     // Create score graph image
+    //     $score = AssessmentScore::where('assessment_id', $id)->get();
+
+    //     // Evaluate assessment, calculate score and create graph/chart image
+    //     if (!count($score)) {
+    //             $data = [];
+    //             foreach ($assessment->assessments_answers as $answer) {
+    //                 $data[$answer->question_id] = $answer->answer->answer;
+    //             }
+
+    //         $evaluatorService = new AssessmentEvaluator();
+    //         $respondentResults = $evaluatorService->evaluate($id, $data, $assessment->respondent->gender, $assessment->respondent->adult, 1);
+    //         $customerResults = $evaluatorService->evaluate($id, $data, $assessment->respondent->gender, $assessment->respondent->adult, null);
+
+    //         // Store results evaluation in html format
+    //         AssessmentResult::create([
+    //             'assessment_id' => $id,
+    //             'content'       => $customerResults
+    //         ]);
+
+    //         // Create score graph image
+    //         $score = AssessmentScore::where('assessment_id', $id)->get();
+    //         $traitData = [];
+    //         foreach ($score as $trait_score) {
+    //             $traitData[$trait_score->trait->key] = $trait_score->score;
+    //         }
+
+    //         $chart = ChartBuilder::buildEmailChartImage($traitData);
+
+    //         // Store image on file server
+    //         $chart_hash = substr(md5($id), 0, 16);
+    //         $filename = 'images/score-charts/'. $chart_hash .'.png';
+    //         $fp = fopen($filename, 'w');
+    //         imagepng($chart, $fp);
+
+    //         // $chart1 = ChartBuilder::buildChartImage($traitData);
+
+    //         // // Store image on file server
+    //         // $chart_hash1 = substr(md5($id), 0, 16);
+    //         // $chart_hash1 = $chart_hash1.'1';
+    //         // $filename1 = 'images/score-charts/'. $chart_hash1 .'.png';
+    //         // $fp1 = fopen($filename1, 'w');
+    //         // imagepng($chart1, $fp1);
+
+    //         // Send Notifications
+    //         if($membercode->customer->send_test_email){
+    //             $respondent->notify(new RespondentScore($respondent, $respondentResults, $membercode->customer));
+    //             $membercode->customer->notify(new CustomerScore($membercode->customer, $customerResults, $respondent));
+    //         }
+    //     }
+        
+    // }
 
 }
