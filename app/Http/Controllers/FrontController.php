@@ -489,17 +489,18 @@ class FrontController extends Controller
             foreach ($score as $trait_score) {
                 $traitData[$trait_score->trait->key] = $trait_score->score;
             }
-            // $traitData = [ "A" => -20,
-            // "B" => -10,
-            // "C" => -53,
-            // "D" => -16,
-            // "E" => -64,
-            // "F" => -20,
-            // "G" => -84,
-            // "H" => -36,
-            // "I" => -75,
-            // "J" => -55];
-            $chart = ChartBuilder::buildEmailChartImage($traitData);
+            // $traitData = [ "A" => 98,
+            // "B" => 97,
+            // "C" => -27,
+            // "D" => 68,
+            // "E" => 94,
+            // "F" => 78,
+            // "G" => 70,
+            // "H" => 72,
+            // "I" => -17,
+            // "J" => 39];
+            // $chart = ChartBuilder::buildEmailChartImage($traitData);
+            $chart = ChartBuilder::buildChartImage($traitData);
 
             // Store image on file server
             $chart_hash = substr(md5($id), 0, 16);
