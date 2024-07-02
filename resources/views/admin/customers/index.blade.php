@@ -34,6 +34,7 @@
                         <th>@lang('global.customers.fields.last_name')</th>
                         <th>@lang('global.customers.fields.title')</th>
                         <th>@lang('global.customers.fields.email')</th>
+                        <th>@lang('global.customers.fields.test_email')</th>
                         <th>@lang('global.customers.fields.phone')</th>
                         <th>@lang('global.customers.fields.membercode')</th>
                         <th>@lang('global.customers.fields.active')</th>
@@ -52,6 +53,12 @@
                                 <td>{{ $customer->last_name }}</td>
                                 <td>{{ $customer->title }}</td>
                                 <td>{{ $customer->email }}</td>
+                                 <td>
+                                    {{-- {{ $customer->send_test_email }} --}}
+                                    <input type="checkbox" class="SendEmail" data-on="Yes" data-off="No" data-height="30"
+                                        data-id={{ $customer->id }} {{ $customer->send_test_email ? 'checked' : '' }}
+                                        data-toggle="toggle">
+                                </td>
                                 <td>{{ $customer->phone }}</td>
                                 <td>
                                     @if ($customer->membercode)
@@ -80,5 +87,25 @@
 @section('javascript') 
     <script>
         window.route_mass_crud_entries_destroy = '{{ route('admin.customers.mass_destroy') }}';
+    </script>
+    <script>
+        $(document).ready(function() {
+            $('.SendEmail').change(function() {
+                $.ajaxSetup({
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    }
+                });
+
+                var id = ($(this).attr("data-id"));
+                $.ajax({
+                    type: "GET",
+                    url: "/admin/toggle/test-email/"+ id,
+                    success: function(results) {
+                        console.log(results);
+                    }
+                });
+            });
+        });
     </script>
 @endsection

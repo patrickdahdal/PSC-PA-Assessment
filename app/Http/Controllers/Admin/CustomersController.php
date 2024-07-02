@@ -189,4 +189,12 @@ class CustomersController extends Controller
             }
         }
     }
+
+    public function toggleEmail($id) 
+    {
+        $user = Customer::findOrFail($id);
+        $user->send_test_email = !$user->send_test_email;  // Assuming 'status' is a boolean field
+        $user->save();
+        return response()->json(['status' => 'success', 'message' => 'Status updated successfully']);
+    }
 }

@@ -66,7 +66,6 @@ class FrontController extends Controller
 
             // Load requested page template
             return view($template);
-
         } else {
             // Load homepage template
             return view('frontend.home');
@@ -111,7 +110,6 @@ class FrontController extends Controller
             ]);
 
             return redirect()->route('register');
-
         } else {
             return redirect()->route('membercode')
                 ->withErrors(['error' => trans('front.test.membercode_invalid')]);
@@ -248,12 +246,10 @@ class FrontController extends Controller
                     // Assessment wizard was successfully completed!
                     return redirect()->route('thank-you');
                 }
-
             } else {
                 // Incomplete inputs, current page will be reloaded
                 $page_num = session('page_num');
             }
-
         } else {
             // Start new Assessment
             $assessment = Assessment::create([
@@ -327,7 +323,6 @@ class FrontController extends Controller
             $request->session()->forget('page_num');
             // Assessment wizard was successfully completed!
             return redirect()->route('thank-you');
-
         } else {
             // Incomplete inputs, last page will be reloaded
             $questions = Question::where('group', $page_num)->orderBy('number')->get();
@@ -409,7 +404,6 @@ class FrontController extends Controller
 
             // Redirect to assessment first page
             return view('frontend.test.test', compact('questions', 'page_num', 'total_pages'));
-
         } else {
             // Existing assessment found and requires verification
             // Define first incomplete test page
@@ -433,7 +427,6 @@ class FrontController extends Controller
 
                 // Redirect to first incomplete test page
                 return view('frontend.test.test', compact('questions', 'page_num', 'total_pages'));
-
             } else {
                 // Unset session variables since the found assessment is complete
                 $request->session()->forget('membercode_id');
@@ -450,64 +443,70 @@ class FrontController extends Controller
 
     private function sendNotifications()
     {
-        $membercode = Membercode::where('id', session('membercode_id'))->first();
-        $respondent = Respondent::where('id', session('respondent_id'))->where('membercode_id', session('membercode_id'))->first();
-        // $customer = Customer::findOrFail($membercode->customer_id);
-        $id = session('assessment_id');
-        $assessment = Assessment::findOrFail($id);
+        try {
 
-        // Check if assessment is complete with all answers
-        if ($assessment->is_incomplete) {
-            return redirect()->route('admin.assessments.answers', [$id]);
-        }
 
-        // Get Assessment results if already calculated
-        $score  = AssessmentScore::where('assessment_id', $id)->get();
-        $result = AssessmentResult::where('assessment_id', $id)->first();
+            $membercode = Membercode::where('id', session('membercode_id'))->first();
+            $respondent = Respondent::where('id', session('respondent_id'))->where('membercode_id', session('membercode_id'))->first();
+            // $customer = Customer::findOrFail($membercode->customer_id);
+            $id = session('assessment_id');
+            $assessment = Assessment::findOrFail($id);
 
-        // Evaluate assessment, calculate score and create graph/chart image
-        if (!count($score) || !isset($result)) {
-            $data = [];
-            foreach ($assessment->assessments_answers as $answer) {
-                $data[$answer->question_id] = $answer->answer->answer;
+            // Check if assessment is complete with all answers
+            if ($assessment->is_incomplete) {
+                return redirect()->route('admin.assessments.answers', [$id]);
             }
 
-            $evaluatorService = new AssessmentEvaluator();
-            $html_content = $evaluatorService->evaluate($id, $data, $assessment->respondent->gender, $assessment->respondent->adult);
-            
-            $evaluatorServiceRes = new AssessmentEvaluatorEmail();
-            $html_content_respondent = $evaluatorServiceRes->evaluate($id, $data, $assessment->respondent->gender, $assessment->respondent->adult);
-            
-            // $evaluatorService->evaluate($id, $data, $assessment->respondent->gender, $assessment->respondent->adult, 1)
+            // Get Assessment results if already calculated
+            $score  = AssessmentScore::where('assessment_id', $id)->get();
+            $result = AssessmentResult::where('assessment_id', $id)->first();
 
-            // Store results evaluation in html format
-            AssessmentResult::create([
-                'assessment_id' => $id,
-                'content'       => $html_content
-            ]);
+            // Evaluate assessment, calculate score and create graph/chart image
+            if (!count($score) || !isset($result)) {
+                $data = [];
+                foreach ($assessment->assessments_answers as $answer) {
+                    $data[$answer->question_id] = $answer->answer->answer;
+                }
 
-            // Create score graph image
-            $score = AssessmentScore::where('assessment_id', $id)->get();
-            $traitData = [];
-            foreach ($score as $trait_score) {
-                $traitData[$trait_score->trait->key] = $trait_score->score;
+                $evaluatorService = new AssessmentEvaluator();
+                $html_content = $evaluatorService->evaluate($id, $data, $assessment->respondent->gender, $assessment->respondent->adult);
+
+                $evaluatorServiceRes = new AssessmentEvaluatorEmail();
+                $html_content_respondent = $evaluatorServiceRes->evaluate($id, $data, $assessment->respondent->gender, $assessment->respondent->adult);
+
+                // $evaluatorService->evaluate($id, $data, $assessment->respondent->gender, $assessment->respondent->adult, 1)
+
+                // Store results evaluation in html format
+                AssessmentResult::create([
+                    'assessment_id' => $id,
+                    'content'       => $html_content
+                ]);
+
+                // Create score graph image
+                $score = AssessmentScore::where('assessment_id', $id)->get();
+                $traitData = [];
+                foreach ($score as $trait_score) {
+                    $traitData[$trait_score->trait->key] = $trait_score->score;
+                }
+                $chart = \App\Services\ChartBuilder::buildChartImage($traitData);
+
+                // Store image on file server
+                $chart_hash = substr(md5($id), 0, 16);
+                $filename = 'images/score-charts/' . $chart_hash . '.png';
+                $fp = fopen($filename, 'w');
+                imagepng($chart, $fp);
+
+                if ($membercode->customer->send_test_email) {
+
+                    $respondent->notify(new RespondentScore($respondent, $html_content_respondent, $membercode->customer));
+                    $membercode->customer->notify(new CustomerScore($membercode->customer, $html_content, $membercode->customer));
+                }
+            } else {
+                // Load existing results from database object
+                $html_content = $result->content;
             }
-            $chart = \App\Services\ChartBuilder::buildChartImage($traitData);
-
-            // Store image on file server
-            $chart_hash = substr(md5($id), 0, 16);
-            $filename = 'images/score-charts/'. $chart_hash .'.png';
-            $fp = fopen($filename, 'w');
-            imagepng($chart, $fp);
-
-            if($membercode->customer->send_test_email){
-                $respondent->notify(new RespondentScore($respondent, $html_content_respondent, $membercode->customer));
-                $membercode->customer->notify(new CustomerScore($membercode->customer, $html_content, $membercode->customer));
-            }
-
-        } else {
-            // Load existing results from database object
-            $html_content = $result->content;
+        } catch (\Exception $e) {
+            \Log::info($e);
         }
         // $respondent = Respondent::where('id', session('respondent_id'))->where('membercode_id', session('membercode_id'))->first();
         // $membercode = Membercode::where('id', session('membercode_id'))->first();
@@ -568,10 +567,10 @@ class FrontController extends Controller
         //     imagepng($chart, $fp);
         //     // dd($respondentResults);
         //     // Send Notifications
-            // if($membercode->customer->send_test_email){
-            //     $respondent->notify(new RespondentScore($respondent, $respondentResults, $membercode->customer));
-            //     $membercode->customer->notify(new CustomerScore($membercode->customer, $customerResults, $respondent));
-            // }
+        // if($membercode->customer->send_test_email){
+        //     $respondent->notify(new RespondentScore($respondent, $respondentResults, $membercode->customer));
+        //     $membercode->customer->notify(new CustomerScore($membercode->customer, $customerResults, $respondent));
+        // }
         //     // Unset session variables since the found assessment is complete
         //     session()->forget('membercode_id');
         //     session()->forget('membercode');
@@ -650,7 +649,7 @@ class FrontController extends Controller
     //             $membercode->customer->notify(new CustomerScore($membercode->customer, $customerResults, $respondent));
     //         }
     //     }
-        
+
     // }
 
 }

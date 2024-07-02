@@ -74,6 +74,7 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'as' => 'admin.'], 
     ]);
     Route::post('customers_mass_destroy',['uses'=>'Admin\CustomersController@customersMassDestroy','as'=>'customers.mass_destroy']);
 
+    Route::get('toggle/test-email/{id}', 'Admin\CustomersController@toggleEmail')->name('test.email');
     // Assessments, Questions and Traits routes
     Route::get('assessments', 'Admin\AssessmentsController@index')->name('assessments.index');
     Route::get('assessments/answers/{id}', 'Admin\AssessmentsController@answers')->name('assessments.answers');
