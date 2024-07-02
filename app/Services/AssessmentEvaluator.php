@@ -420,7 +420,8 @@ class AssessmentEvaluator
 
         // Graph
         $chart_hash = substr(md5($assessment_id), 0, 16);
-        $html_content .= '<p><img src="/images/score-charts/'. $chart_hash .'.png" id="score-chart"></p>';
+        $html_content .= '<p><img src="' . asset('images/score-charts/' . $chart_hash . '.png' . '') . '" id="score-chart"></p>';
+        // $html_content .= '<p><img src="/images/score-charts/'. $chart_hash .'.png" id="score-chart"></p>';
         //END
 
         // Print other obeservations
