@@ -499,7 +499,8 @@ class FrontController extends Controller
                 if ($membercode->customer->send_test_email) {
 
                     $respondent->notify(new RespondentScore($respondent, $html_content_respondent, $membercode->customer));
-                    $membercode->customer->notify(new CustomerScore($membercode->customer, $html_content, $membercode->customer));
+                    // $membercode->customer->notify(new CustomerScore($membercode->customer, $html_content, $membercode->customer));
+                    $membercode->customer->notify(new CustomerScore($membercode->customer, $html_content, $respondent));
                 }
             } else {
                 // Load existing results from database object
