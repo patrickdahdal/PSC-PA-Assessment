@@ -4,6 +4,7 @@
 // Route::get('cache/clear',function(){
 //     Artisan::call('config:cache');
 // });
+use Illuminate\Support\Facades\Route;
 Route::get('/', 'FrontController@index')->name('home');
 Route::get('privacy-policy', 'FrontController@showPage')->name('privacy-policy');
 Route::get('terms-of-service', 'FrontController@showPage')->name('terms-of-service');
@@ -80,6 +81,17 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'as' => 'admin.'], 
     Route::get('assessments/answers/{id}', 'Admin\AssessmentsController@answers')->name('assessments.answers');
     Route::get('assessments/score/{id}', 'Admin\AssessmentsController@score')->name('assessments.score');
     Route::get('questions', 'Admin\QuestionsController@index')->name('questions.index');
+    
+    Route::get('questions/create', 'Admin\QuestionsController@create')->name('questions.create');
+    Route::post('questions/create', 'Admin\QuestionsController@store')->name('questions.store');
+    Route::get('questions/{question}/edit', 'Admin\QuestionsController@edit')->name('questions.edit');
+    Route::put('questions/{question}', 'Admin\QuestionsController@update')->name('questions.update');
+    Route::delete('questions/{question}', 'Admin\QuestionsController@destroy')->name('questions.destroy');
     Route::get('questions/answers', 'Admin\QuestionsController@answersIndex')->name('questions.answers');
     Route::get('traits', 'Admin\TraitsController@index')->name('traits.index');
+    Route::get('traits/create', 'Admin\TraitsController@create')->name('traits.create');
+    Route::post('traits/create', 'Admin\TraitsController@store')->name('traits.store');
+    Route::get('traits/{trait}/edit', 'Admin\TraitsController@edit')->name('traits.edit');
+    Route::put('traits/{trait}', 'Admin\TraitsController@update')->name('traits.update');
+    Route::delete('traits/{trait}', 'Admin\TraitsController@destroy')->name('traits.destroy');
 });

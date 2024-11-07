@@ -11,6 +11,12 @@
             @else
                 @lang('global.app.list')
             @endif
+            <div  style="float: right;">
+                <a class="btn btn-primary" href="{{ route('admin.questions.create') }}">
+
+                    Create Question
+                </a>
+            </div>
         </div>
 
         <div class="panel-body table-responsive">
@@ -21,6 +27,7 @@
                         <th>@lang('global.questions.fields.number')</th>
                         <th>@lang('global.questions.fields.question')</th>
                         <th>@lang('global.questions.fields.group')</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
 
@@ -32,6 +39,17 @@
                                 <td>{{ $question->number }}</td>
                                 <td>{{ $question->question }}</td>
                                 <td>{{ $question->group }}</td>
+                               
+                                <td>
+                                    <a href="{{ route('admin.questions.edit', $question->id) }}" class="btn btn-xs btn-info">
+                                        <i class="fa fa-edit"></i>
+                                    </a>
+                                    <form action="{{ route('admin.questions.destroy', $question->id) }}" method="POST" style="display:inline-block;" >
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-xs btn-danger"><i class="fa fa-trash"></i></button>
+                                    </form>
+                                </td>
                             </tr>
                         @endforeach
                     @else
