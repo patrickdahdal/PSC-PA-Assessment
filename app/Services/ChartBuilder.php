@@ -189,7 +189,7 @@ class ChartBuilder
 
     public static function buildChartImage(array $data)
     {
-        // Validate chart data
+        // Validate chart data test
         if (empty($data) || count($data) != 10) {
             return false;
         }
