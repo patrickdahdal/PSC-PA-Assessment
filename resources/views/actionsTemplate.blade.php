@@ -5,8 +5,8 @@
 @can($gateKey.'edit')
     <a href="{{ route($routeKey.'.edit', $row->id) }}" class="btn btn-xs btn-info">@lang('global.app.edit')</a>
 @endcan
-@can($gateKey.'delete')
 
+@can($gateKey.'delete')
     {!! Form::open(array(
         'style' => 'display: inline-block;',
         'method' => 'DELETE',
