@@ -23,7 +23,7 @@
                 </div>
                 <div class="col-xs-6 form-group">
                     {!! Form::label('number', 'Number*', ['class' => 'control-label']) !!}
-                    {!! Form::number('number', old('number'), ['class' => 'form-control', 'placeholder' => '']) !!}
+                    {!! Form::number('number', old('number'), ['class' => 'form-control', 'placeholder' => '', 'required' => '', 'max' => '255']) !!}
                     <p class="help-block"></p>
                     @if($errors->has('number'))
                         <p class="help-block">
