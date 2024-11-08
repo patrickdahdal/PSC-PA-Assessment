@@ -233,8 +233,10 @@ class ChartBuilder
             $font    = 'C:\wamp64\www\PSC-PA-Assessment\public\google-fonts\robotocondensed\RobotoCondensed-Regular.ttf';
             $fontBig = 'C:\wamp64\www\PSC-PA-Assessment\public\google-fonts\roboto\Roboto-Bold.ttf';
         } else {
-            $font    = '/var/www/personalityassessment.me/public/google-fonts/robotocondensed/RobotoCondensed-Regular.ttf';
-            $fontBig = '/var/www/personalityassessment.me/public/google-fonts/roboto/Roboto-Bold.ttf';
+            // $font    = '/var/www/personalityassessment.me/public/google-fonts/robotocondensed/RobotoCondensed-Regular.ttf';
+            // $fontBig = '/var/www/personalityassessment.me/public/google-fonts/roboto/Roboto-Bold.ttf';
+            $font   = '/var/www/personalityai.me/public/google-fonts/robotocondensed/RobotoCondensed-Regular.ttf';
+            $fontBig = '/var/www/personalityai.me/public/google-fonts/roboto/Roboto-Bold.ttf';
         }
     
         $fontSize     = 11;
@@ -359,8 +361,10 @@ class ChartBuilder
 
         // Font settings
         if (App::environment('local')) {
-            $font    = 'C:\wamp64\www\PSC-Assessment\PSC-PA-Assessment\public\google-fonts\robotocondensed\RobotoCondensed-Regular.ttf';
-            $fontBig = 'C:\wamp64\www\PSC-Assessment\PSC-PA-Assessment\public\google-fonts\roboto\Roboto-Bold.ttf';
+            // $font    = 'C:\wamp64\www\PSC-Assessment\PSC-PA-Assessment\public\google-fonts\robotocondensed\RobotoCondensed-Regular.ttf';
+            // $fontBig = 'C:\wamp64\www\PSC-Assessment\PSC-PA-Assessment\public\google-fonts\roboto\Roboto-Bold.ttf';
+            $font   = '/var/www/personalityai.me/public/google-fonts/robotocondensed/RobotoCondensed-Regular.ttf';
+            $fontBig = '/var/www/personalityai.me/public/google-fonts/roboto/Roboto-Bold.ttf';
         } else {
             $font    = public_path('google-fonts/robotocondensed/RobotoCondensed-Regular.ttf');
             $fontBig = public_path('google-fonts/roboto/Roboto-Bold.ttf');
