@@ -5,12 +5,14 @@
         {!! Form::open(['method' => 'POST', 'route' => ['membercode.save']]) !!}
 
         <div class="row">
-            <div class="col-md-2 form-group">
+            <h2 style="color: red; font-style: italic;">This site is currently down.</h2>
+
+            {{-- <div class="col-md-2 form-group">
                 {!! Form::text('membercode', old('membercode'), ['class' => 'form-control', 'placeholder' => trans('front.test.membercode_placeholder'), 'size' => 20, 'maxlength' => 16]) !!}
             </div>
             <div class="col-md-10 form-group">
                 {!! Form::submit(trans('front.test.submit_next'), ['class' => 'btn btn-primary']) !!}
-            </div>
+            </div> --}}
         </div>
 
         {!! Form::close() !!}
