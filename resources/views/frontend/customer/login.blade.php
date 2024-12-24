@@ -3,7 +3,9 @@
 @section('content')
     <div class="row" style="background-size: 75%; background-image: url(/theme/assets/media/bg/bg-3.jpg);">
         <div class="col-xl-10">
-            <div class="kt-grid kt-grid--hor kt-grid--root  kt-login kt-login--v3 kt-login--signin" id="kt_login">
+            <h2 style="color: red; font-style: italic;">This site is currently down.</h2>
+
+            {{-- <div class="kt-grid kt-grid--hor kt-grid--root  kt-login kt-login--v3 kt-login--signin" id="kt_login">
                 <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor">
                     <div class="kt-grid__item kt-grid__item--fluid kt-login__wrapper">
                         <div class="kt-login__container">
@@ -44,7 +46,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
         </div>
     </div>
 @stop
